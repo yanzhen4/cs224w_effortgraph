@@ -1,0 +1,715 @@
+{
+  "total": 26529,
+  "field_count": 72,
+  "fields": [
+    {
+      "field": "Physics",
+      "discipline": "Science",
+      "count": 2845,
+      "difficulty_counts": {
+        "middle": 1207,
+        "hard": 1482,
+        "easy": 156
+      }
+    },
+    {
+      "field": "Mathematics",
+      "discipline": "Science",
+      "count": 2622,
+      "difficulty_counts": {
+        "middle": 906,
+        "hard": 1460,
+        "easy": 256
+      }
+    },
+    {
+      "field": "Chemistry",
+      "discipline": "Science",
+      "count": 1769,
+      "difficulty_counts": {
+        "middle": 726,
+        "hard": 910,
+        "easy": 133
+      }
+    },
+    {
+      "field": "Clinical Medicine",
+      "discipline": "Medicine",
+      "count": 1218,
+      "difficulty_counts": {
+        "hard": 172,
+        "middle": 742,
+        "easy": 304
+      }
+    },
+    {
+      "field": "Biology",
+      "discipline": "Science",
+      "count": 1120,
+      "difficulty_counts": {
+        "middle": 635,
+        "hard": 92,
+        "easy": 393
+      }
+    },
+    {
+      "field": "Mechanics",
+      "discipline": "Engineering",
+      "count": 908,
+      "difficulty_counts": {
+        "easy": 53,
+        "hard": 456,
+        "middle": 399
+      }
+    },
+    {
+      "field": "Computer Science and Technology",
+      "discipline": "Engineering",
+      "count": 763,
+      "difficulty_counts": {
+        "middle": 346,
+        "hard": 108,
+        "easy": 309
+      }
+    },
+    {
+      "field": "Applied Economics",
+      "discipline": "Economics",
+      "count": 723,
+      "difficulty_counts": {
+        "middle": 458,
+        "hard": 43,
+        "easy": 222
+      }
+    },
+    {
+      "field": "Power Engineering and Engineering Thermophysics",
+      "discipline": "Engineering",
+      "count": 684,
+      "difficulty_counts": {
+        "middle": 268,
+        "easy": 71,
+        "hard": 345
+      }
+    },
+    {
+      "field": "History",
+      "discipline": "History",
+      "count": 674,
+      "difficulty_counts": {
+        "middle": 180,
+        "easy": 491,
+        "hard": 3
+      }
+    },
+    {
+      "field": "Art Studies",
+      "discipline": "Literature and Arts",
+      "count": 603,
+      "difficulty_counts": {
+        "easy": 519,
+        "middle": 84
+      }
+    },
+    {
+      "field": "Law",
+      "discipline": "Law",
+      "count": 591,
+      "difficulty_counts": {
+        "hard": 57,
+        "easy": 208,
+        "middle": 326
+      }
+    },
+    {
+      "field": "Basic Medicine",
+      "discipline": "Medicine",
+      "count": 567,
+      "difficulty_counts": {
+        "middle": 361,
+        "easy": 177,
+        "hard": 29
+      }
+    },
+    {
+      "field": "Electrical Engineering",
+      "discipline": "Engineering",
+      "count": 556,
+      "difficulty_counts": {
+        "hard": 234,
+        "middle": 267,
+        "easy": 55
+      }
+    },
+    {
+      "field": "Information and Communication Engineering",
+      "discipline": "Engineering",
+      "count": 504,
+      "difficulty_counts": {
+        "middle": 253,
+        "hard": 156,
+        "easy": 95
+      }
+    },
+    {
+      "field": "Language and Literature",
+      "discipline": "Literature and Arts",
+      "count": 440,
+      "difficulty_counts": {
+        "middle": 216,
+        "easy": 219,
+        "hard": 5
+      }
+    },
+    {
+      "field": "Musicology",
+      "discipline": "Literature and Arts",
+      "count": 426,
+      "difficulty_counts": {
+        "easy": 253,
+        "middle": 166,
+        "hard": 7
+      }
+    },
+    {
+      "field": "Chemical Engineering and Technology",
+      "discipline": "Engineering",
+      "count": 410,
+      "difficulty_counts": {
+        "hard": 226,
+        "easy": 36,
+        "middle": 148
+      }
+    },
+    {
+      "field": "Astronomy",
+      "discipline": "Science",
+      "count": 405,
+      "difficulty_counts": {
+        "easy": 105,
+        "middle": 162,
+        "hard": 138
+      }
+    },
+    {
+      "field": "Optical Engineering",
+      "discipline": "Engineering",
+      "count": 376,
+      "difficulty_counts": {
+        "middle": 176,
+        "hard": 162,
+        "easy": 38
+      }
+    },
+    {
+      "field": "Civil Engineering",
+      "discipline": "Engineering",
+      "count": 358,
+      "difficulty_counts": {
+        "easy": 87,
+        "middle": 178,
+        "hard": 93
+      }
+    },
+    {
+      "field": "Philosophy",
+      "discipline": "Philosophy",
+      "count": 347,
+      "difficulty_counts": {
+        "middle": 183,
+        "easy": 137,
+        "hard": 27
+      }
+    },
+    {
+      "field": "Geology",
+      "discipline": "Science",
+      "count": 341,
+      "difficulty_counts": {
+        "middle": 189,
+        "easy": 136,
+        "hard": 16
+      }
+    },
+    {
+      "field": "Public Health and Preventive Medicine",
+      "discipline": "Medicine",
+      "count": 292,
+      "difficulty_counts": {
+        "middle": 119,
+        "easy": 171,
+        "hard": 2
+      }
+    },
+    {
+      "field": "Materials Science and Engineering",
+      "discipline": "Engineering",
+      "count": 289,
+      "difficulty_counts": {
+        "middle": 130,
+        "easy": 49,
+        "hard": 110
+      }
+    },
+    {
+      "field": "Pharmacy",
+      "discipline": "Medicine",
+      "count": 278,
+      "difficulty_counts": {
+        "middle": 156,
+        "easy": 113,
+        "hard": 9
+      }
+    },
+    {
+      "field": "Traditional Chinese Medicine",
+      "discipline": "Medicine",
+      "count": 268,
+      "difficulty_counts": {
+        "middle": 176,
+        "easy": 89,
+        "hard": 3
+      }
+    },
+    {
+      "field": "Metallurgical Engineering",
+      "discipline": "Engineering",
+      "count": 255,
+      "difficulty_counts": {
+        "middle": 88,
+        "hard": 84,
+        "easy": 83
+      }
+    },
+    {
+      "field": "Transportation Engineering",
+      "discipline": "Engineering",
+      "count": 251,
+      "difficulty_counts": {
+        "easy": 132,
+        "hard": 27,
+        "middle": 92
+      }
+    },
+    {
+      "field": "Education",
+      "discipline": "Education",
+      "count": 247,
+      "difficulty_counts": {
+        "middle": 92,
+        "easy": 155
+      }
+    },
+    {
+      "field": "Electronic Science and Technology",
+      "discipline": "Engineering",
+      "count": 246,
+      "difficulty_counts": {
+        "middle": 115,
+        "hard": 95,
+        "easy": 36
+      }
+    },
+    {
+      "field": "Hydraulic Engineering",
+      "discipline": "Engineering",
+      "count": 218,
+      "difficulty_counts": {
+        "middle": 99,
+        "hard": 67,
+        "easy": 52
+      }
+    },
+    {
+      "field": "Journalism and Communication",
+      "discipline": "Literature and Arts",
+      "count": 207,
+      "difficulty_counts": {
+        "middle": 30,
+        "easy": 177
+      }
+    },
+    {
+      "field": "Military Science",
+      "discipline": "Military Science",
+      "count": 205,
+      "difficulty_counts": {
+        "middle": 78,
+        "easy": 123,
+        "hard": 4
+      }
+    },
+    {
+      "field": "Atmospheric Science",
+      "discipline": "Science",
+      "count": 203,
+      "difficulty_counts": {
+        "middle": 105,
+        "easy": 73,
+        "hard": 25
+      }
+    },
+    {
+      "field": "Oceanography",
+      "discipline": "Science",
+      "count": 200,
+      "difficulty_counts": {
+        "middle": 63,
+        "easy": 117,
+        "hard": 20
+      }
+    },
+    {
+      "field": "Control Science and Engineering",
+      "discipline": "Engineering",
+      "count": 190,
+      "difficulty_counts": {
+        "hard": 77,
+        "middle": 87,
+        "easy": 26
+      }
+    },
+    {
+      "field": "Environmental Science and Engineering",
+      "discipline": "Engineering",
+      "count": 189,
+      "difficulty_counts": {
+        "easy": 80,
+        "middle": 70,
+        "hard": 39
+      }
+    },
+    {
+      "field": "Mechanical Engineering",
+      "discipline": "Engineering",
+      "count": 176,
+      "difficulty_counts": {
+        "middle": 91,
+        "hard": 30,
+        "easy": 55
+      }
+    },
+    {
+      "field": "Surveying and Mapping Science and Technology",
+      "discipline": "Engineering",
+      "count": 168,
+      "difficulty_counts": {
+        "middle": 83,
+        "hard": 9,
+        "easy": 76
+      }
+    },
+    {
+      "field": "Architecture",
+      "discipline": "Engineering",
+      "count": 162,
+      "difficulty_counts": {
+        "middle": 68,
+        "easy": 92,
+        "hard": 2
+      }
+    },
+    {
+      "field": "Public Administration",
+      "discipline": "Management",
+      "count": 151,
+      "difficulty_counts": {
+        "easy": 90,
+        "middle": 61
+      }
+    },
+    {
+      "field": "Library, Information and Archival Management",
+      "discipline": "Management",
+      "count": 150,
+      "difficulty_counts": {
+        "easy": 90,
+        "middle": 58,
+        "hard": 2
+      }
+    },
+    {
+      "field": "Physical Education",
+      "discipline": "Education",
+      "count": 150,
+      "difficulty_counts": {
+        "easy": 98,
+        "middle": 51,
+        "hard": 1
+      }
+    },
+    {
+      "field": "Theoretical Economics",
+      "discipline": "Economics",
+      "count": 150,
+      "difficulty_counts": {
+        "middle": 107,
+        "hard": 4,
+        "easy": 39
+      }
+    },
+    {
+      "field": "Crop Science",
+      "discipline": "Agronomy",
+      "count": 145,
+      "difficulty_counts": {
+        "middle": 75,
+        "easy": 67,
+        "hard": 3
+      }
+    },
+    {
+      "field": "Sociology",
+      "discipline": "Sociology",
+      "count": 143,
+      "difficulty_counts": {
+        "middle": 45,
+        "easy": 97,
+        "hard": 1
+      }
+    },
+    {
+      "field": "Business Administration",
+      "discipline": "Management",
+      "count": 142,
+      "difficulty_counts": {
+        "easy": 64,
+        "middle": 77,
+        "hard": 1
+      }
+    },
+    {
+      "field": "Naval Architecture and Ocean Engineering",
+      "discipline": "Engineering",
+      "count": 138,
+      "difficulty_counts": {
+        "easy": 63,
+        "middle": 68,
+        "hard": 7
+      }
+    },
+    {
+      "field": "Geography",
+      "discipline": "Science",
+      "count": 133,
+      "difficulty_counts": {
+        "easy": 80,
+        "middle": 53
+      }
+    },
+    {
+      "field": "Stomatology",
+      "discipline": "Medicine",
+      "count": 132,
+      "difficulty_counts": {
+        "middle": 75,
+        "easy": 55,
+        "hard": 2
+      }
+    },
+    {
+      "field": "Forestry",
+      "discipline": "Agronomy",
+      "count": 131,
+      "difficulty_counts": {
+        "middle": 63,
+        "easy": 68
+      }
+    },
+    {
+      "field": "Aeronautical and Astronautical Science and Technology",
+      "discipline": "Engineering",
+      "count": 119,
+      "difficulty_counts": {
+        "middle": 43,
+        "easy": 38,
+        "hard": 38
+      }
+    },
+    {
+      "field": "Petroleum and Natural Gas Engineering",
+      "discipline": "Engineering",
+      "count": 112,
+      "difficulty_counts": {
+        "middle": 61,
+        "easy": 39,
+        "hard": 12
+      }
+    },
+    {
+      "field": "Food Science and Engineering",
+      "discipline": "Engineering",
+      "count": 109,
+      "difficulty_counts": {
+        "easy": 75,
+        "middle": 34
+      }
+    },
+    {
+      "field": "Nuclear Science and Technology",
+      "discipline": "Engineering",
+      "count": 107,
+      "difficulty_counts": {
+        "middle": 45,
+        "hard": 30,
+        "easy": 32
+      }
+    },
+    {
+      "field": "Agricultural Engineering",
+      "discipline": "Engineering",
+      "count": 104,
+      "difficulty_counts": {
+        "middle": 41,
+        "hard": 10,
+        "easy": 53
+      }
+    },
+    {
+      "field": "Animal Husbandry",
+      "discipline": "Agronomy",
+      "count": 103,
+      "difficulty_counts": {
+        "middle": 44,
+        "easy": 57,
+        "hard": 2
+      }
+    },
+    {
+      "field": "Forestry Engineering",
+      "discipline": "Engineering",
+      "count": 100,
+      "difficulty_counts": {
+        "middle": 42,
+        "easy": 57,
+        "hard": 1
+      }
+    },
+    {
+      "field": "Geophysics",
+      "discipline": "Science",
+      "count": 100,
+      "difficulty_counts": {
+        "middle": 43,
+        "easy": 26,
+        "hard": 31
+      }
+    },
+    {
+      "field": "Mining Engineering",
+      "discipline": "Engineering",
+      "count": 100,
+      "difficulty_counts": {
+        "easy": 53,
+        "middle": 42,
+        "hard": 5
+      }
+    },
+    {
+      "field": "Textile Science and Engineering",
+      "discipline": "Engineering",
+      "count": 100,
+      "difficulty_counts": {
+        "middle": 42,
+        "easy": 50,
+        "hard": 8
+      }
+    },
+    {
+      "field": "Weapon Science and Technology",
+      "discipline": "Engineering",
+      "count": 100,
+      "difficulty_counts": {
+        "easy": 51,
+        "middle": 34,
+        "hard": 15
+      }
+    },
+    {
+      "field": "Psychology",
+      "discipline": "Education",
+      "count": 87,
+      "difficulty_counts": {
+        "easy": 51,
+        "middle": 36
+      }
+    },
+    {
+      "field": "Political Science",
+      "discipline": "Law",
+      "count": 65,
+      "difficulty_counts": {
+        "middle": 17,
+        "easy": 48
+      }
+    },
+    {
+      "field": "Management Science and Engineering",
+      "discipline": "Management",
+      "count": 58,
+      "difficulty_counts": {
+        "easy": 15,
+        "middle": 40,
+        "hard": 3
+      }
+    },
+    {
+      "field": "Aquaculture",
+      "discipline": "Agronomy",
+      "count": 56,
+      "difficulty_counts": {
+        "easy": 42,
+        "middle": 14
+      }
+    },
+    {
+      "field": "Geological Resources and Geological Engineering",
+      "discipline": "Engineering",
+      "count": 50,
+      "difficulty_counts": {
+        "middle": 30,
+        "easy": 20
+      }
+    },
+    {
+      "field": "Instrument Science and Technology",
+      "discipline": "Engineering",
+      "count": 50,
+      "difficulty_counts": {
+        "middle": 22,
+        "easy": 16,
+        "hard": 12
+      }
+    },
+    {
+      "field": "Physical Oceanography",
+      "discipline": "Science",
+      "count": 50,
+      "difficulty_counts": {
+        "middle": 26,
+        "easy": 10,
+        "hard": 14
+      }
+    },
+    {
+      "field": "Systems Science",
+      "discipline": "Science",
+      "count": 50,
+      "difficulty_counts": {
+        "hard": 22,
+        "easy": 10,
+        "middle": 18
+      }
+    },
+    {
+      "field": "Veterinary Medicine",
+      "discipline": "Agronomy",
+      "count": 50,
+      "difficulty_counts": {
+        "middle": 23,
+        "easy": 25,
+        "hard": 2
+      }
+    }
+  ]
+}

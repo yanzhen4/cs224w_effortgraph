@@ -1,0 +1,246 @@
+{
+  "seed": 224,
+  "per_category": 100,
+  "policy": "Historical test pools, including removed questions; exact-prompt deduplication within category; balance task then native difficulty subject to availability. No inferred difficulty.",
+  "categories": {
+    "coding": {
+      "raw_records": 128,
+      "unique_prompts": 128,
+      "sampled": 100,
+      "tasks": {
+        "LCB_generation": {
+          "available": 78,
+          "sampled": 50,
+          "difficulty_available": {
+            "easy": 28,
+            "hard": 16,
+            "medium": 34
+          },
+          "difficulty_sampled": {
+            "easy": 17,
+            "hard": 16,
+            "medium": 17
+          }
+        },
+        "coding_completion": {
+          "available": 50,
+          "sampled": 50,
+          "difficulty_available": {
+            "easy": 12,
+            "hard": 9,
+            "medium": 29
+          },
+          "difficulty_sampled": {
+            "easy": 12,
+            "hard": 9,
+            "medium": 29
+          }
+        }
+      },
+      "difficulty_sampled": {
+        "easy": 29,
+        "medium": 46,
+        "hard": 25
+      },
+      "source_sha256": "36b9e2c570e769da2fcb7984b07114fb169d90a5b3b4f0a1ae327e29f5a33748",
+      "sample_sha256": "a9c9d283b404336fc1b4e5f1815c5005cba30ea98fe549173925add446e14c20"
+    },
+    "data_analysis": {
+      "raw_records": 150,
+      "unique_prompts": 149,
+      "sampled": 100,
+      "tasks": {
+        "cta": {
+          "available": 49,
+          "sampled": 34,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "tablejoin": {
+          "available": 50,
+          "sampled": 33,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "tablereformat": {
+          "available": 50,
+          "sampled": 33,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        }
+      },
+      "difficulty_sampled": {},
+      "source_sha256": "2dd499fab7cabd3f1591690e98de55fe7c61c1e495d06d204bd545d15219c027",
+      "sample_sha256": "d2a032bd6c43987da0c30ae270830af3a47d485b2209c2a887a6b50679f2ac5a"
+    },
+    "instruction_following": {
+      "raw_records": 400,
+      "unique_prompts": 400,
+      "sampled": 100,
+      "tasks": {
+        "paraphrase": {
+          "available": 100,
+          "sampled": 25,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "simplify": {
+          "available": 100,
+          "sampled": 25,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "story_generation": {
+          "available": 100,
+          "sampled": 25,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "summarize": {
+          "available": 100,
+          "sampled": 25,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        }
+      },
+      "difficulty_sampled": {},
+      "source_sha256": "60e35f66bb41480e0fad1b5c0e115e3bbdc3c7d6d61bf63764458debf3733c16",
+      "sample_sha256": "d9d65aafe7c87a65c9803d60e6dd653d2d8be6291c5a8ec68aeed5c9547762cc"
+    },
+    "language": {
+      "raw_records": 190,
+      "unique_prompts": 190,
+      "sampled": 100,
+      "tasks": {
+        "connections": {
+          "available": 100,
+          "sampled": 34,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "plot_unscrambling": {
+          "available": 40,
+          "sampled": 33,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "typos": {
+          "available": 50,
+          "sampled": 33,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        }
+      },
+      "difficulty_sampled": {},
+      "source_sha256": "3dfe6df65f87ab23050c9c1ea48277b718d504b70c5615aaf60982064b1e8790",
+      "sample_sha256": "dcc57d340d967e6bb8ab4127c4520a8d4014c02a06b970cb4e3e884458f3bc62"
+    },
+    "math": {
+      "raw_records": 368,
+      "unique_prompts": 368,
+      "sampled": 100,
+      "tasks": {
+        "AMPS_Hard": {
+          "available": 150,
+          "sampled": 34,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "math_comp": {
+          "available": 146,
+          "sampled": 33,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "olympiad": {
+          "available": 72,
+          "sampled": 33,
+          "difficulty_available": {
+            "0.1": 12,
+            "0.5": 12,
+            "0.8": 12,
+            "1.0": 36
+          },
+          "difficulty_sampled": {
+            "0.1": 9,
+            "0.5": 8,
+            "0.8": 8,
+            "1.0": 8
+          }
+        }
+      },
+      "difficulty_sampled": {
+        "0.8": 8,
+        "0.5": 8,
+        "0.1": 9,
+        "1.0": 8
+      },
+      "source_sha256": "7372214fb8c175364f2a3d813c9a043a4797dfac233648570722ab84a02713bf",
+      "sample_sha256": "57659df3fb50279cd908a18a726aab74df9365372aa059f7de82e59da810a6c2"
+    },
+    "reasoning": {
+      "raw_records": 200,
+      "unique_prompts": 200,
+      "sampled": 100,
+      "tasks": {
+        "spatial": {
+          "available": 50,
+          "sampled": 34,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "web_of_lies_v2": {
+          "available": 50,
+          "sampled": 33,
+          "difficulty_available": {},
+          "difficulty_sampled": {}
+        },
+        "zebra_puzzle": {
+          "available": 100,
+          "sampled": 33,
+          "difficulty_available": {
+            "12": 3,
+            "13": 5,
+            "14": 4,
+            "15": 4,
+            "16": 10,
+            "17": 5,
+            "18": 3,
+            "19": 4,
+            "20": 6,
+            "8": 3,
+            "9": 3
+          },
+          "difficulty_sampled": {
+            "12": 3,
+            "13": 3,
+            "14": 3,
+            "15": 3,
+            "16": 3,
+            "17": 3,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "8": 2,
+            "9": 2
+          }
+        }
+      },
+      "difficulty_sampled": {
+        "20": 3,
+        "13": 3,
+        "14": 3,
+        "17": 3,
+        "12": 3,
+        "18": 3,
+        "16": 3,
+        "19": 3,
+        "9": 2,
+        "15": 3,
+        "8": 2
+      },
+      "source_sha256": "1c57e3dd5cb75a98c1f18c5acc7e817238178e80b6cbfdbc20620cb3e778aad4",
+      "sample_sha256": "7f3d8015fbe4846b75b542c1f6c3f667d9ef26a44812e13fa192eba24a1ea9e1"
+    }
+  }
+}

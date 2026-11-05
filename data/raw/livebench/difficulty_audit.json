@@ -1,0 +1,89 @@
+{
+  "coding": {
+    "total_test_records": 128,
+    "difficulty_field": "original_json.difficulty",
+    "difficulty_values": {
+      "easy": 40,
+      "hard": 25,
+      "medium": 63
+    },
+    "tasks": {
+      "LCB_generation": 78,
+      "coding_completion": 50
+    },
+    "note": "Native metadata only. Values across tasks/categories are not a calibrated common difficulty scale."
+  },
+  "data_analysis": {
+    "total_test_records": 150,
+    "difficulty_field": null,
+    "difficulty_values": {},
+    "tasks": {
+      "tablereformat": 50,
+      "cta": 50,
+      "tablejoin": 50
+    },
+    "note": "Native metadata only. Values across tasks/categories are not a calibrated common difficulty scale."
+  },
+  "instruction_following": {
+    "total_test_records": 400,
+    "difficulty_field": null,
+    "difficulty_values": {},
+    "tasks": {
+      "paraphrase": 100,
+      "story_generation": 100,
+      "simplify": 100,
+      "summarize": 100
+    },
+    "note": "Native metadata only. Values across tasks/categories are not a calibrated common difficulty scale."
+  },
+  "language": {
+    "total_test_records": 190,
+    "difficulty_field": null,
+    "difficulty_values": {},
+    "tasks": {
+      "connections": 100,
+      "plot_unscrambling": 40,
+      "typos": 50
+    },
+    "note": "Native metadata only. Values across tasks/categories are not a calibrated common difficulty scale."
+  },
+  "math": {
+    "total_test_records": 368,
+    "difficulty_field": "hardness",
+    "difficulty_values": {
+      "0.1": 12,
+      "0.5": 12,
+      "0.8": 12,
+      "1.0": 36
+    },
+    "tasks": {
+      "olympiad": 72,
+      "AMPS_Hard": 150,
+      "math_comp": 146
+    },
+    "note": "Native metadata only. Values across tasks/categories are not a calibrated common difficulty scale."
+  },
+  "reasoning": {
+    "total_test_records": 200,
+    "difficulty_field": "level",
+    "difficulty_values": {
+      "12": 3,
+      "13": 5,
+      "14": 4,
+      "15": 4,
+      "16": 10,
+      "17": 5,
+      "18": 3,
+      "19": 4,
+      "20": 6,
+      "8": 3,
+      "9": 3
+    },
+    "tasks": {
+      "zebra_puzzle": 100,
+      "spatial": 50,
+      "web_of_lies_v2": 50
+    },
+    "note": "Native metadata only. Values across tasks/categories are not a calibrated common difficulty scale."
+  }
+}

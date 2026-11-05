@@ -1,0 +1,917 @@
+{
+  "completed_at_utc": "2026-11-05T21:51:17.044677+00:00",
+  "scope": "All files and splits of the eight official question repositories; no filtering or deduplication.",
+  "totals": {
+    "mmlu_pro": 12102,
+    "supergpqa": 26529,
+    "livebench": 1576
+  },
+  "repositories": {
+    "mmlu_pro": {
+      "repository": "TIGER-Lab/MMLU-Pro",
+      "revision": "b189ec765aa7ed75c8acfea42df31fdae71f97be",
+      "files": [
+        {
+          "path": "data/raw/mmlu_pro/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/.gitattributes"
+        },
+        {
+          "path": "data/raw/mmlu_pro/README.md",
+          "bytes": 11723,
+          "sha256": "4bd710f67da3fa359a33edce1b4b5816b3de416c823c2624ba5e89c2557d2a47",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/README.md"
+        },
+        {
+          "path": "data/raw/mmlu_pro/data/test-00000-of-00001.parquet",
+          "bytes": 4144185,
+          "sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/data/test-00000-of-00001.parquet",
+          "records": 12032,
+          "fields": [
+            "answer",
+            "answer_index",
+            "category",
+            "cot_content",
+            "options",
+            "question",
+            "question_id",
+            "src"
+          ],
+          "distributions": {
+            "category": {
+              "biology": 717,
+              "business": 789,
+              "chemistry": 1132,
+              "computer science": 410,
+              "economics": 844,
+              "engineering": 969,
+              "health": 818,
+              "history": 381,
+              "law": 1101,
+              "math": 1351,
+              "other": 924,
+              "philosophy": 499,
+              "physics": 1299,
+              "psychology": 798
+            }
+          },
+          "jsonl_export": "data/raw/mmlu_pro/jsonl/test-00000-of-00001.jsonl"
+        },
+        {
+          "path": "data/raw/mmlu_pro/data/validation-00000-of-00001.parquet",
+          "bytes": 42857,
+          "sha256": "139423c23722e480c807ac4a191409a710cfce4eba744c1d641cf88e730e2078",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/data/validation-00000-of-00001.parquet",
+          "records": 70,
+          "fields": [
+            "answer",
+            "answer_index",
+            "category",
+            "cot_content",
+            "options",
+            "question",
+            "question_id",
+            "src"
+          ],
+          "distributions": {
+            "category": {
+              "biology": 5,
+              "business": 5,
+              "chemistry": 5,
+              "computer science": 5,
+              "economics": 5,
+              "engineering": 5,
+              "health": 5,
+              "history": 5,
+              "law": 5,
+              "math": 5,
+              "other": 5,
+              "philosophy": 5,
+              "physics": 5,
+              "psychology": 5
+            }
+          },
+          "jsonl_export": "data/raw/mmlu_pro/jsonl/validation-00000-of-00001.jsonl"
+        },
+        {
+          "path": "data/raw/mmlu_pro/eval.yaml",
+          "bytes": 590,
+          "sha256": "2c40150225e27de8529ee29c19ce26ad2d53ee1add6b871c495250668b538e1c",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/eval.yaml"
+        },
+        {
+          "path": "data/raw/mmlu_pro/run_claude3.py",
+          "bytes": 2716,
+          "sha256": "95165af65f5a98a9e26e6a3ef8effd9bbc000e47b0b28845c0a6384096a302be",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/run_claude3.py"
+        },
+        {
+          "path": "data/raw/mmlu_pro/run_gpt4o.py",
+          "bytes": 2982,
+          "sha256": "c51204e2ee4a7e2aa0f1082a7ffef0d6a2752450525b3c62d444d743f6fdb54f",
+          "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/run_gpt4o.py"
+        }
+      ],
+      "records": 12102
+    },
+    "supergpqa": {
+      "repository": "m-a-p/SuperGPQA",
+      "revision": "4430d4458112c7d4497fdcf94d7cc223313d6acf",
+      "files": [
+        {
+          "path": "data/raw/supergpqa/.gitattributes",
+          "bytes": 2517,
+          "sha256": "220c11efa5de97bbf4f41367a929426c8d68328739ffa45dae2c23d500767a0a",
+          "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA/resolve/4430d4458112c7d4497fdcf94d7cc223313d6acf/.gitattributes"
+        },
+        {
+          "path": "data/raw/supergpqa/README.md",
+          "bytes": 4442,
+          "sha256": "0d670692d5f36a066d67c10741d160a5fcf0c2cb97f22c8dc8f453ac930b083a",
+          "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA/resolve/4430d4458112c7d4497fdcf94d7cc223313d6acf/README.md"
+        },
+        {
+          "path": "data/raw/supergpqa/SuperGPQA-all.jsonl",
+          "bytes": 23957124,
+          "sha256": "28b998e70205ee95e540317b5adc06a06552a3961fb50b153df126b833f7a910",
+          "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA/resolve/4430d4458112c7d4497fdcf94d7cc223313d6acf/SuperGPQA-all.jsonl",
+          "records": 26529,
+          "fields": [
+            "answer",
+            "answer_letter",
+            "difficulty",
+            "discipline",
+            "field",
+            "is_calculation",
+            "options",
+            "question",
+            "subfield",
+            "uuid"
+          ],
+          "distributions": {
+            "discipline": {
+              "Agronomy": 485,
+              "Economics": 873,
+              "Education": 484,
+              "Engineering": 7892,
+              "History": 674,
+              "Law": 656,
+              "Literature and Arts": 1676,
+              "Management": 501,
+              "Medicine": 2755,
+              "Military Science": 205,
+              "Philosophy": 347,
+              "Science": 9838,
+              "Sociology": 143
+            },
+            "field": {
+              "Aeronautical and Astronautical Science and Technology": 119,
+              "Agricultural Engineering": 104,
+              "Animal Husbandry": 103,
+              "Applied Economics": 723,
+              "Aquaculture": 56,
+              "Architecture": 162,
+              "Art Studies": 603,
+              "Astronomy": 405,
+              "Atmospheric Science": 203,
+              "Basic Medicine": 567,
+              "Biology": 1120,
+              "Business Administration": 142,
+              "Chemical Engineering and Technology": 410,
+              "Chemistry": 1769,
+              "Civil Engineering": 358,
+              "Clinical Medicine": 1218,
+              "Computer Science and Technology": 763,
+              "Control Science and Engineering": 190,
+              "Crop Science": 145,
+              "Education": 247,
+              "Electrical Engineering": 556,
+              "Electronic Science and Technology": 246,
+              "Environmental Science and Engineering": 189,
+              "Food Science and Engineering": 109,
+              "Forestry": 131,
+              "Forestry Engineering": 100,
+              "Geography": 133,
+              "Geological Resources and Geological Engineering": 50,
+              "Geology": 341,
+              "Geophysics": 100,
+              "History": 674,
+              "Hydraulic Engineering": 218,
+              "Information and Communication Engineering": 504,
+              "Instrument Science and Technology": 50,
+              "Journalism and Communication": 207,
+              "Language and Literature": 440,
+              "Law": 591,
+              "Library, Information and Archival Management": 150,
+              "Management Science and Engineering": 58,
+              "Materials Science and Engineering": 289,
+              "Mathematics": 2622,
+              "Mechanical Engineering": 176,
+              "Mechanics": 908,
+              "Metallurgical Engineering": 255,
+              "Military Science": 205,
+              "Mining Engineering": 100,
+              "Musicology": 426,
+              "Naval Architecture and Ocean Engineering": 138,
+              "Nuclear Science and Technology": 107,
+              "Oceanography": 200,
+              "Optical Engineering": 376,
+              "Petroleum and Natural Gas Engineering": 112,
+              "Pharmacy": 278,
+              "Philosophy": 347,
+              "Physical Education": 150,
+              "Physical Oceanography": 50,
+              "Physics": 2845,
+              "Political Science": 65,
+              "Power Engineering and Engineering Thermophysics": 684,
+              "Psychology": 87,
+              "Public Administration": 151,
+              "Public Health and Preventive Medicine": 292,
+              "Sociology": 143,
+              "Stomatology": 132,
+              "Surveying and Mapping Science and Technology": 168,
+              "Systems Science": 50,
+              "Textile Science and Engineering": 100,
+              "Theoretical Economics": 150,
+              "Traditional Chinese Medicine": 268,
+              "Transportation Engineering": 251,
+              "Veterinary Medicine": 50,
+              "Weapon Science and Technology": 100
+            },
+            "subfield": {
+              "Acoustics": 245,
+              "Advanced Algebra": 202,
+              "Advanced Programming Languages": 50,
+              "Aeronautical and Astronautical Science and Technology": 119,
+              "Agricultural Environment and Soil-Water Engineering": 54,
+              "Agricultural Mechanization Engineering": 50,
+              "Analytical Chemistry": 396,
+              "Anesthesiology": 50,
+              "Animal Nutrition and Feed Science": 52,
+              "Animal Rearing and Breeding": 51,
+              "Antenna and Radio Communication": 114,
+              "Applied Optics": 124,
+              "Aquaculture": 56,
+              "Archaeology and Museology": 104,
+              "Architectural Design and Theory": 50,
+              "Architectural History": 62,
+              "Astronomical Observation and Technology": 100,
+              "Astrophysics": 69,
+              "Atmospheric Physics and Atmospheric Environment": 69,
+              "Atomic and Molecular Physics": 210,
+              "Basic Stomatology": 53,
+              "Biochemistry and Molecular Biology": 99,
+              "Biophysics": 50,
+              "Botany": 166,
+              "Bridge and Tunnel Engineering": 51,
+              "Broadcasting and Television Art": 50,
+              "Business and Accounting Management": 92,
+              "Cartography and Geographic Information Engineering": 50,
+              "Cell Biology": 87,
+              "Chemical Transport Engineering": 50,
+              "Circuits and Systems": 108,
+              "Civil and Commercial Law": 118,
+              "Classical Chinese Literature": 50,
+              "Clinical Laboratory Diagnostics": 50,
+              "Clinical Stomatology": 79,
+              "Combinatorial Mathematics": 191,
+              "Communication Principles": 116,
+              "Communication and Broadcasting": 58,
+              "Communication and Information Systems": 69,
+              "Composition": 50,
+              "Computational Mathematics": 50,
+              "Computer Architecture": 50,
+              "Computer Networks": 59,
+              "Computer Software and Theory": 79,
+              "Constitutional and Administrative Law": 50,
+              "Contract Law": 50,
+              "Control Theory and Control Engineering": 89,
+              "Cosmology": 78,
+              "Criminal Law": 116,
+              "Crop Science": 145,
+              "Cryptography": 50,
+              "Dance Studies": 50,
+              "Data Structures": 99,
+              "Databases": 157,
+              "Demography and Anthropology": 50,
+              "Dermatology and Venereology": 66,
+              "Design Arts": 62,
+              "Digital Surveying and Remote Sensing Applications": 68,
+              "Discrete Mathematics": 89,
+              "Drama and Opera Studies": 82,
+              "Dynamic Meteorology": 50,
+              "Ecology": 144,
+              "Economic History": 50,
+              "Economic Statistics": 50,
+              "Education Economics, Management and Social Security": 50,
+              "Educational Technology and Principles": 96,
+              "Electrical Theory and New Technologies": 190,
+              "Electrochemistry": 222,
+              "Electrodynamics": 583,
+              "Electromagnetic Field and Microwave Technology": 88,
+              "Elements of Chemical Reaction Engineering": 107,
+              "Emergency Medicine": 66,
+              "Engineering Fluid Mechanics": 84,
+              "Engineering Thermophysics": 146,
+              "Environmental Engineering": 89,
+              "Environmental Science": 50,
+              "Environmental and Resource Protection": 50,
+              "Epidemiology and Health Statistics": 83,
+              "Ethics": 68,
+              "Film Studies": 158,
+              "Finance": 176,
+              "Fine Arts": 201,
+              "Fluid Flow and Heat Transfer in Chemical Engineering": 107,
+              "Fluid Machinery and Engineering": 64,
+              "Fluid Physics": 134,
+              "Food Biochemistry": 50,
+              "Food Processing and Storage Engineering": 59,
+              "Forensic Medicine": 50,
+              "Forest Cultivation and Genetic Breeding": 81,
+              "Forest Engineering": 50,
+              "Formal Languages": 52,
+              "French Language and Literature": 50,
+              "Functions of Complex Variables": 122,
+              "Functions of Real Variables": 67,
+              "Fundamental Mathematics": 197,
+              "Fundamentals of Dynamics and Control": 347,
+              "Fuzzy Mathematics": 50,
+              "Genetics": 184,
+              "Geochemistry": 50,
+              "Geodesy and Surveying Engineering": 50,
+              "Geological Resources and Geological Engineering": 50,
+              "Geometry and Topology": 265,
+              "Geotechnical Engineering": 179,
+              "Geriatric Medicine": 50,
+              "Graph Theory": 51,
+              "Group Theory": 50,
+              "Guidance, Navigation and Control": 51,
+              "Harmony": 60,
+              "Health Toxicology and Environmental Health": 80,
+              "Heat Transfer": 129,
+              "High Voltage and Insulation Technology": 88,
+              "Historical Geography": 142,
+              "History and Theory of Journalism and Media Management": 59,
+              "Human Anatomy and Histology-Embryology": 189,
+              "Human Geography": 50,
+              "Hydraulics and Hydrology": 136,
+              "Hydrogeology": 50,
+              "Imaging and Nuclear Medicine": 67,
+              "Immunology": 69,
+              "Industrial Economics": 84,
+              "Information Management Science": 50,
+              "Information Management and Communication": 50,
+              "Inorganic Chemistry": 138,
+              "Instrument Science and Technology": 50,
+              "Instrumentation and Performance": 65,
+              "Internal Combustion Engineering": 50,
+              "Internal Medicine": 202,
+              "International Law": 57,
+              "International Trade": 69,
+              "Iron and Steel Metallurgy": 105,
+              "Journalism and News Practice": 90,
+              "Labor Economics": 74,
+              "Land Resource Management and Administrative Management": 51,
+              "Landscape Plants and Ornamental Horticulture": 50,
+              "Laser Technology": 50,
+              "Law and Social Governance": 50,
+              "Legal Theory and Legal History": 50,
+              "Library and Archival Science": 50,
+              "Linguistics and Applied Linguistics": 50,
+              "Literary History": 69,
+              "Literary Theory": 64,
+              "Logic": 70,
+              "Management Science and Engineering": 58,
+              "Manufacturing Automation": 126,
+              "Marine Biology": 50,
+              "Marine Chemistry": 50,
+              "Marine Engineering": 50,
+              "Mass Transport and Separation Process in Chemical Engineering": 146,
+              "Materials Physics and Chemistry": 199,
+              "Materials Processing Engineering": 90,
+              "Maternal, Child and Adolescent Health": 79,
+              "Mathematical Analysis": 288,
+              "Mechatronic Engineering": 50,
+              "Medicinal Chemistry": 50,
+              "Meteorology": 84,
+              "Microbiology": 161,
+              "Microbiology and Biochemical Pharmacy": 50,
+              "Microelectronics and Solid-State Electronics": 50,
+              "Military Chemistry and Pyrotechnics": 50,
+              "Military Command and Information Systems": 50,
+              "Military Law": 50,
+              "Military Logistics and Equipment": 54,
+              "Military Management": 50,
+              "Military Thought and History": 51,
+              "Mineral Processing Engineering": 50,
+              "Mineralogy, Petrology, and Economic Geology": 121,
+              "Mining and Safety Engineering": 50,
+              "Modern and Contemporary Chinese Literature": 50,
+              "Music History, Education, and Technology": 145,
+              "Musical Forms and Analysis": 50,
+              "National and Defense Economics": 50,
+              "Neurology": 189,
+              "Non-ferrous Metallurgy": 50,
+              "Nuclear Energy and Reactor Technology": 57,
+              "Number Theory": 220,
+              "Numerical Analysis": 67,
+              "Nursing and Rehabilitation Medicine": 50,
+              "Nutrition and Food Hygiene": 50,
+              "Obstetrics and Gynecology": 102,
+              "Oil and Gas Field Development and Storage & Transportation Engineering": 62,
+              "Oncology": 58,
+              "Operating Systems": 85,
+              "Operations Research and Cybernetics": 50,
+              "Ophthalmology": 50,
+              "Optical Fiber Communication": 50,
+              "Optoelectronic Technology": 67,
+              "Ordinary Differential Equations": 160,
+              "Organic Chemistry": 171,
+              "Otorhinolaryngology": 50,
+              "Paleontology and Stratigraphy": 50,
+              "Particle and Nuclear Physics": 225,
+              "Pathogen Biology": 94,
+              "Pathology and Pathophysiology": 115,
+              "Pattern Recognition": 50,
+              "Pediatrics": 50,
+              "Pharmaceutical Analysis": 50,
+              "Pharmaceutics": 73,
+              "Pharmacology": 55,
+              "Philology and Bibliography": 50,
+              "Philosophical Aesthetics": 109,
+              "Philosophy of Science and Technology": 50,
+              "Physical Chemistry": 706,
+              "Physical Chemistry of Metallurgical Process": 50,
+              "Physical Education and Training": 50,
+              "Physical Geography": 83,
+              "Physical Oceanography": 50,
+              "Physiology": 120,
+              "Pitch and Scales": 56,
+              "Political Economy": 50,
+              "Political Science": 65,
+              "Polymer Chemistry and Physics": 76,
+              "Polymer Physics": 109,
+              "Polynomials and Series Expansions": 179,
+              "Poromechanics and Reservoir Physics": 50,
+              "Power Electronics and Electrical Drives": 182,
+              "Power Machinery and Engineering": 52,
+              "Power Systems and Automation": 96,
+              "Preschool Education": 50,
+              "Principles of Computer Organization": 82,
+              "Principles of Metallurgy": 50,
+              "Principles of Seismic Exploration": 50,
+              "Probability and Statistics": 224,
+              "Procedural Law": 50,
+              "Psychiatry and Mental Health": 50,
+              "Psychology": 87,
+              "Public Finance": 120,
+              "Quantitative Economics": 100,
+              "Quantum Mechanics": 206,
+              "Radiation Medicine": 50,
+              "Radiation Protection and Nuclear Technology Applications": 50,
+              "Radiochemistry": 60,
+              "Refrigeration and Cryogenic Engineering": 50,
+              "Relativity": 79,
+              "Religious Studies": 50,
+              "Rigid Body Mechanics": 173,
+              "Road and Railway Engineering": 50,
+              "Russian Language and Literature": 57,
+              "Semiconductor Physics": 61,
+              "Ship Mechanics and Design Principles": 88,
+              "Signal and Information Processing": 155,
+              "Social Medicine and Health Management": 50,
+              "Social and Folklore Studies": 93,
+              "Solar System Science": 88,
+              "Solid Earth Geophysics": 50,
+              "Solid Mechanics": 93,
+              "Solid State Physics": 147,
+              "Space physics": 50,
+              "Special Education": 50,
+              "Special Number Theory": 50,
+              "Sports Humanities and Sociology": 50,
+              "Sports Science and Medicine": 50,
+              "Statistical Mechanics": 50,
+              "Stellar and Interstellar Evolution": 70,
+              "Stochastic Processes": 50,
+              "Structural Engineering": 57,
+              "Structural Geology": 70,
+              "Subatomic and Atomic Physics": 51,
+              "Surgery": 68,
+              "Systems Science": 50,
+              "Textile Chemistry and Dyeing Engineering": 50,
+              "Textile Materials Science": 50,
+              "Theoretical Fluid Mechanics": 140,
+              "Theoretical Mechanics": 155,
+              "Theoretical Optics": 135,
+              "Theory of Curriculum and Instruction": 51,
+              "Thermal Energy Engineering": 109,
+              "Thermodynamics": 215,
+              "Thermodynamics and Statistical Physics": 530,
+              "Tourism Management and Technological Economics Management": 50,
+              "Traditional Chinese Health Preservation": 59,
+              "Traditional Chinese Medicine Theory": 90,
+              "Traditional Chinese Pharmacy": 119,
+              "Traffic Information Engineering and Control": 65,
+              "Transportation Planning and Management": 86,
+              "Underwater Acoustics": 50,
+              "Urban Infrastructure Engineering": 71,
+              "Urban Planning and Design": 50,
+              "Vehicle Operation Engineering": 50,
+              "Veterinary Medicine": 50,
+              "Water conservancy and Hydropower Engineering": 82,
+              "Weapon Systems Science and Engineering": 50,
+              "Western Economics": 50,
+              "Wood Science and Technology": 50,
+              "World History": 428,
+              "Zoology": 109
+            },
+            "difficulty": {
+              "easy": 7731,
+              "hard": 7050,
+              "middle": 11748
+            }
+          },
+          "jsonl_export": "data/raw/supergpqa/jsonl/SuperGPQA-all.jsonl"
+        }
+      ],
+      "records": 26529
+    },
+    "livebench/coding": {
+      "repository": "livebench/coding",
+      "revision": "a958549fdd8aa57be0a3fafe7b205ffc160ed5f4",
+      "files": [
+        {
+          "path": "data/raw/livebench/coding/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/livebench/coding/resolve/a958549fdd8aa57be0a3fafe7b205ffc160ed5f4/.gitattributes"
+        },
+        {
+          "path": "data/raw/livebench/coding/README.md",
+          "bytes": 2221,
+          "sha256": "f10f0c8cce06604d315dc854760e8b06ad3f1ed96da5ac2e617b54a7ef29e1dc",
+          "url": "https://huggingface.co/datasets/livebench/coding/resolve/a958549fdd8aa57be0a3fafe7b205ffc160ed5f4/README.md"
+        },
+        {
+          "path": "data/raw/livebench/coding/data/test-00000-of-00001.parquet",
+          "bytes": 244785858,
+          "sha256": "5f02d01fb21672f5d84169f940adab46ff3ca09b9159fd42fdd289bc9be23502",
+          "url": "https://huggingface.co/datasets/livebench/coding/resolve/a958549fdd8aa57be0a3fafe7b205ffc160ed5f4/data/test-00000-of-00001.parquet",
+          "records": 128,
+          "fields": [
+            "category",
+            "citation",
+            "livebench_release_date",
+            "livebench_removal_date",
+            "original_json",
+            "partial_solution",
+            "private_test_cases",
+            "public_test_cases",
+            "question_id",
+            "question_title",
+            "release_date",
+            "remainder",
+            "solution",
+            "task",
+            "turns"
+          ],
+          "distributions": {
+            "category": {
+              "coding": 128
+            },
+            "task": {
+              "LCB_generation": 78,
+              "coding_completion": 50
+            },
+            "livebench_release_date": {
+              "2024-06-24 00:00:00": 88,
+              "2024-07-26 00:00:00": 40
+            },
+            "livebench_removal_date": {
+              "2025-04-02 00:00:00": 128
+            }
+          },
+          "jsonl_export": "data/raw/livebench/coding/jsonl/test-00000-of-00001.jsonl"
+        }
+      ],
+      "records": 128
+    },
+    "livebench/data_analysis": {
+      "repository": "livebench/data_analysis",
+      "revision": "31b9661ff678df9958e2f7fa228427f4c858c1a1",
+      "files": [
+        {
+          "path": "data/raw/livebench/data_analysis/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/livebench/data_analysis/resolve/31b9661ff678df9958e2f7fa228427f4c858c1a1/.gitattributes"
+        },
+        {
+          "path": "data/raw/livebench/data_analysis/README.md",
+          "bytes": 1474,
+          "sha256": "780383c0e1992b22d7c0228fa89a99385f03f36f8bf2b8f5f027d15d9c2a3bb6",
+          "url": "https://huggingface.co/datasets/livebench/data_analysis/resolve/31b9661ff678df9958e2f7fa228427f4c858c1a1/README.md"
+        },
+        {
+          "path": "data/raw/livebench/data_analysis/data/test-00000-of-00001.parquet",
+          "bytes": 144796,
+          "sha256": "fb86a7a02fa9eabf785d9e8af85955990cf6d228cc9d3f805a54f863bc8c4c52",
+          "url": "https://huggingface.co/datasets/livebench/data_analysis/resolve/31b9661ff678df9958e2f7fa228427f4c858c1a1/data/test-00000-of-00001.parquet",
+          "records": 150,
+          "fields": [
+            "category",
+            "ground_truth",
+            "livebench_release_date",
+            "livebench_removal_date",
+            "question_id",
+            "task",
+            "turns"
+          ],
+          "distributions": {
+            "category": {
+              "data_analysis": 150
+            },
+            "task": {
+              "cta": 50,
+              "tablejoin": 50,
+              "tablereformat": 50
+            },
+            "livebench_release_date": {
+              "2024-06-24 00:00:00": 150
+            },
+            "livebench_removal_date": {
+              "": 150
+            }
+          },
+          "jsonl_export": "data/raw/livebench/data_analysis/jsonl/test-00000-of-00001.jsonl"
+        }
+      ],
+      "records": 150
+    },
+    "livebench/instruction_following": {
+      "repository": "livebench/instruction_following",
+      "revision": "0868379c4b5cf62aeacaf8be4f08fced815c81bb",
+      "files": [
+        {
+          "path": "data/raw/livebench/instruction_following/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/livebench/instruction_following/resolve/0868379c4b5cf62aeacaf8be4f08fced815c81bb/.gitattributes"
+        },
+        {
+          "path": "data/raw/livebench/instruction_following/README.md",
+          "bytes": 2274,
+          "sha256": "caa7f92f28d03a01d9f62329e40f4e0680442f97d26c33041b1fd520b3aaf400",
+          "url": "https://huggingface.co/datasets/livebench/instruction_following/resolve/0868379c4b5cf62aeacaf8be4f08fced815c81bb/README.md"
+        },
+        {
+          "path": "data/raw/livebench/instruction_following/data/test-00000-of-00001.parquet",
+          "bytes": 537024,
+          "sha256": "a9bb97bbaf8788142c310bcb33d50e2f6f5df8cbd8b8c3db677816b06f0f4f25",
+          "url": "https://huggingface.co/datasets/livebench/instruction_following/resolve/0868379c4b5cf62aeacaf8be4f08fced815c81bb/data/test-00000-of-00001.parquet",
+          "records": 400,
+          "fields": [
+            "category",
+            "citation",
+            "instruction_id_list",
+            "kwargs",
+            "livebench_release_date",
+            "livebench_removal_date",
+            "question_id",
+            "release_date",
+            "task",
+            "task_prompt",
+            "turns"
+          ],
+          "distributions": {
+            "category": {
+              "instruction_following": 400
+            },
+            "task": {
+              "paraphrase": 100,
+              "simplify": 100,
+              "story_generation": 100,
+              "summarize": 100
+            },
+            "livebench_release_date": {
+              "2024-06-24 00:00:00": 200,
+              "2024-11-25 00:00:00": 200
+            },
+            "livebench_removal_date": {
+              "": 200,
+              "2024-11-25": 200
+            }
+          },
+          "jsonl_export": "data/raw/livebench/instruction_following/jsonl/test-00000-of-00001.jsonl"
+        }
+      ],
+      "records": 400
+    },
+    "livebench/math": {
+      "repository": "livebench/math",
+      "revision": "bb66571c8ccf32d3df9e6f48b920d3770ff4aacb",
+      "files": [
+        {
+          "path": "data/raw/livebench/math/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/livebench/math/resolve/bb66571c8ccf32d3df9e6f48b920d3770ff4aacb/.gitattributes"
+        },
+        {
+          "path": "data/raw/livebench/math/README.md",
+          "bytes": 1652,
+          "sha256": "8d63de322edb4c0f5fb3964189aab445b8e471d72e659104986ae34359923d9b",
+          "url": "https://huggingface.co/datasets/livebench/math/resolve/bb66571c8ccf32d3df9e6f48b920d3770ff4aacb/README.md"
+        },
+        {
+          "path": "data/raw/livebench/math/data/test-00000-of-00001.parquet",
+          "bytes": 185605,
+          "sha256": "3d365cad1f9b8d7c5416d63866653d6854b270d9c93b51323d405ed5fd51df54",
+          "url": "https://huggingface.co/datasets/livebench/math/resolve/bb66571c8ccf32d3df9e6f48b920d3770ff4aacb/data/test-00000-of-00001.parquet",
+          "records": 368,
+          "fields": [
+            "category",
+            "expressions",
+            "ground_truth",
+            "hardness",
+            "livebench_release_date",
+            "livebench_removal_date",
+            "question_id",
+            "release_date",
+            "subtask",
+            "task",
+            "turns",
+            "year"
+          ],
+          "distributions": {
+            "category": {
+              "math": 368
+            },
+            "task": {
+              "AMPS_Hard": 150,
+              "math_comp": 146,
+              "olympiad": 72
+            },
+            "livebench_release_date": {
+              "2024-06-24 00:00:00": 232,
+              "2024-08-31 00:00:00": 136
+            },
+            "livebench_removal_date": {
+              "": 182,
+              "2024-08-31": 136,
+              "2025-04-02": 50
+            }
+          },
+          "jsonl_export": "data/raw/livebench/math/jsonl/test-00000-of-00001.jsonl"
+        }
+      ],
+      "records": 368
+    },
+    "livebench/reasoning": {
+      "repository": "livebench/reasoning",
+      "revision": "6fc6498a5dfba553f69f4413feabade1f1a2d384",
+      "files": [
+        {
+          "path": "data/raw/livebench/reasoning/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/livebench/reasoning/resolve/6fc6498a5dfba553f69f4413feabade1f1a2d384/.gitattributes"
+        },
+        {
+          "path": "data/raw/livebench/reasoning/README.md",
+          "bytes": 1502,
+          "sha256": "88c6f322d82d166840b4f622ea07b06a77d50ffb1f6b7c2eec08f91dee786440",
+          "url": "https://huggingface.co/datasets/livebench/reasoning/resolve/6fc6498a5dfba553f69f4413feabade1f1a2d384/README.md"
+        },
+        {
+          "path": "data/raw/livebench/reasoning/data/test-00000-of-00001.parquet",
+          "bytes": 88219,
+          "sha256": "4204bb94c812690ef8ba5f4c1f10b5b1082ca0b7bc532166834f798aa56e2a3c",
+          "url": "https://huggingface.co/datasets/livebench/reasoning/resolve/6fc6498a5dfba553f69f4413feabade1f1a2d384/data/test-00000-of-00001.parquet",
+          "records": 200,
+          "fields": [
+            "category",
+            "ground_truth",
+            "level",
+            "livebench_release_date",
+            "livebench_removal_date",
+            "question_id",
+            "task",
+            "turns"
+          ],
+          "distributions": {
+            "category": {
+              "reasoning": 200
+            },
+            "task": {
+              "spatial": 50,
+              "web_of_lies_v2": 50,
+              "zebra_puzzle": 100
+            },
+            "livebench_release_date": {
+              "2024-06-24 00:00:00": 100,
+              "2024-07-26 00:00:00": 50,
+              "2024-11-25 00:00:00": 50
+            },
+            "livebench_removal_date": {
+              "": 100,
+              "2024-11-25": 50,
+              "2025-04-02": 50
+            }
+          },
+          "jsonl_export": "data/raw/livebench/reasoning/jsonl/test-00000-of-00001.jsonl"
+        }
+      ],
+      "records": 200
+    },
+    "livebench/language": {
+      "repository": "livebench/language",
+      "revision": "3ada32a2e53d5e04e57fa503384cb85ce9116c40",
+      "files": [
+        {
+          "path": "data/raw/livebench/language/.gitattributes",
+          "bytes": 2307,
+          "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f",
+          "url": "https://huggingface.co/datasets/livebench/language/resolve/3ada32a2e53d5e04e57fa503384cb85ce9116c40/.gitattributes"
+        },
+        {
+          "path": "data/raw/livebench/language/README.md",
+          "bytes": 1654,
+          "sha256": "cfec2f881ba803c02aca66d08655a17cf99299a7ca0015092ee101d710fc6383",
+          "url": "https://huggingface.co/datasets/livebench/language/resolve/3ada32a2e53d5e04e57fa503384cb85ce9116c40/README.md"
+        },
+        {
+          "path": "data/raw/livebench/language/data/test-00000-of-00001.parquet",
+          "bytes": 287876,
+          "sha256": "76ba142afd242ca02d6baa8bb737608d2b416674f311d8f9d798b4e3908a499c",
+          "url": "https://huggingface.co/datasets/livebench/language/resolve/3ada32a2e53d5e04e57fa503384cb85ce9116c40/data/test-00000-of-00001.parquet",
+          "records": 190,
+          "fields": [
+            "category",
+            "citation",
+            "ground_truth",
+            "group",
+            "livebench_release_date",
+            "livebench_removal_date",
+            "movie_name",
+            "question_id",
+            "raw_id",
+            "release_date",
+            "task",
+            "turns"
+          ],
+          "distributions": {
+            "category": {
+              "language": 190
+            },
+            "task": {
+              "connections": 100,
+              "plot_unscrambling": 40,
+              "typos": 50
+            },
+            "livebench_release_date": {
+              "2024-06-24 00:00:00": 140,
+              "2024-11-25 00:00:00": 50
+            },
+            "livebench_removal_date": {
+              "": 50,
+              "2024-11-25": 50,
+              "2025-04-02": 90
+            }
+          },
+          "jsonl_export": "data/raw/livebench/language/jsonl/test-00000-of-00001.jsonl"
+        },
+        {
+          "path": "data/raw/livebench/language/data/train-00000-of-00001.parquet",
+          "bytes": 277545,
+          "sha256": "cf9a03a1944199fc316414d0f8b3b6e27b7316448daed94f332a9e4a4b010c3e",
+          "url": "https://huggingface.co/datasets/livebench/language/resolve/3ada32a2e53d5e04e57fa503384cb85ce9116c40/data/train-00000-of-00001.parquet",
+          "records": 140,
+          "fields": [
+            "category",
+            "citation",
+            "ground_truth",
+            "group",
+            "grouping",
+            "movie_name",
+            "question_id",
+            "raw_id",
+            "release_date",
+            "turns"
+          ],
+          "distributions": {
+            "category": {
+              "connections": 50,
+              "plot_unscrambling": 40,
+              "typos": 50
+            }
+          },
+          "jsonl_export": "data/raw/livebench/language/jsonl/train-00000-of-00001.jsonl"
+        }
+      ],
+      "records": 330
+    }
+  }
+}
