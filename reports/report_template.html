@@ -1,0 +1,301 @@
+<title>EffortGraph 基线结果</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one 1040px column; header, four key-point cards (claim, two figures, one chart), then folded detail sections. */
+:root {
+  --bg: #f3f5f7; --panel: #fbfcfd; --ink: #12161b; --ink-2: #49515b; --ink-3: #78808a; --rule: #dce1e7;
+  --accent: #1c5cab; --grid: #e4e8ed; --axis: #c3c9d0;
+  --c-mlp: #eb6834; --c-group: #2a78d6; --c-oracle: #1baf7a; --c-label: #9aa1aa;
+  --m-nano: #a9afb7; --m-mini: #6b737d; --m-gpt5: #262b31;
+  --sans: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "PingFang SC", "Microsoft YaHei", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111316; --panel: #181b1f; --ink: #eef0f2; --ink-2: #b8bec6; --ink-3: #89909a; --rule: #2a2f36;
+    --accent: #86b6ef; --grid: #252a30; --axis: #3b4149;
+    --c-mlp: #d95926; --c-group: #3987e5; --c-oracle: #199e70; --c-label: #6d757e;
+    --m-nano: #5a616b; --m-mini: #98a0a9; --m-gpt5: #e8ebee; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111316; --panel: #181b1f; --ink: #eef0f2; --ink-2: #b8bec6; --ink-3: #89909a; --rule: #2a2f36;
+  --accent: #86b6ef; --grid: #252a30; --axis: #3b4149;
+  --c-mlp: #d95926; --c-group: #3987e5; --c-oracle: #199e70; --c-label: #6d757e;
+  --m-nano: #5a616b; --m-mini: #98a0a9; --m-gpt5: #e8ebee; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.page { max-width: 1040px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 36px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: clamp(28px, 4vw, 38px); line-height: 1.2; margin: 0; font-weight: 700; text-wrap: balance; }
+.lead { margin: 0; max-width: 68ch; color: var(--ink-2); font-size: 16px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 6px 0 0; padding: 0; list-style: none; font-family: var(--mono); font-size: 13px; color: var(--ink-2); }
+.facts b { color: var(--ink); font-weight: 600; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px; align-items: start; }
+.card { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 20px 20px 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.card h2 { margin: 0; font-size: 19px; line-height: 1.35; font-weight: 650; text-wrap: balance; }
+.figs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fig { display: grid; gap: 2px; min-width: 0; }
+.fig .v { font-family: var(--mono); font-size: 26px; font-weight: 600; line-height: 1.1; }
+.fig .k { font-size: 13px; color: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.sw.bar { border-radius: 2px; width: 14px; }
+.note { margin: 0; font-size: 13.5px; color: var(--ink-2); }
+.chartwrap { overflow-x: auto; min-width: 0; }
+.chart { width: 100%; min-width: 460px; height: auto; display: block; overflow: visible; }
+.chart .grid { stroke: var(--grid); stroke-width: 1; }
+.chart .axis { stroke: var(--axis); stroke-width: 1; }
+.chart .tick { fill: var(--ink-3); font-family: var(--mono); font-size: 11px; }
+.chart .axlab { fill: var(--ink-3); font-size: 11px; }
+.chart .pt { stroke: var(--panel); stroke-width: 2; }
+.chart .pt:focus { outline: none; stroke: var(--ink); }
+.chart .fixed.m-nano, .sw.m-nano { fill: var(--m-nano); background: var(--m-nano); }
+.chart .fixed.m-mini, .sw.m-mini { fill: var(--m-mini); background: var(--m-mini); }
+.chart .fixed.m-gpt5, .sw.m-gpt5 { fill: var(--m-gpt5); background: var(--m-gpt5); }
+.chart .line { fill: none; stroke-width: 2; }
+.chart .line.m-nano { stroke: var(--m-nano); } .chart .line.m-mini { stroke: var(--m-mini); } .chart .line.m-gpt5 { stroke: var(--m-gpt5); }
+.chart .mlp, .sw.mlp { fill: var(--c-mlp); background: var(--c-mlp); }
+.chart .group, .sw.group { fill: var(--c-group); background: var(--c-group); }
+.chart .oracle, .sw.oracle { fill: var(--c-oracle); background: var(--c-oracle); }
+.chart .labelbar, .sw.labelbar { fill: var(--c-label); background: var(--c-label); }
+.chart .mlpbar { fill: var(--c-mlp); }
+.chart .bar:focus { outline: none; stroke: var(--ink); stroke-width: 1.5; }
+.chart .lab { font-size: 11px; fill: var(--ink-2); }
+.chart .fixedlab { fill: var(--ink-3); font-family: var(--mono); font-size: 10.5px; }
+.chart .mlplab, .chart .grouplab, .chart .oraclelab { fill: var(--ink); font-weight: 600; }
+.chart .endlab { fill: var(--ink); font-family: var(--mono); font-weight: 600; font-size: 11.5px; }
+.chart .rowlab { font-size: 12px; fill: var(--ink-2); font-family: var(--mono); }
+.chart .val { fill: var(--ink-2); font-family: var(--mono); font-size: 11px; }
+section.detail { display: grid; gap: 10px; }
+section.detail > h2 { font-size: 15px; margin: 0; font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+details { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; }
+summary { cursor: pointer; padding: 14px 18px; font-weight: 600; font-size: 16px; list-style: none; display: flex; align-items: center; gap: 10px; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--ink-3); border-bottom: 2px solid var(--ink-3); transform: rotate(-45deg); transition: transform .15s; flex: none; }
+details[open] summary::before { transform: rotate(45deg); }
+summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 10px; }
+summary small { font-weight: 400; color: var(--ink-3); font-size: 13px; }
+.body { padding: 0 18px 18px; display: grid; gap: 12px; min-width: 0; }
+.body p, .body ul { margin: 0; max-width: 72ch; }
+.body ul { padding-left: 1.2em; display: grid; gap: 6px; }
+.body h3 { margin: 6px 0 0; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.tablewrap { overflow-x: auto; min-width: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+th { font-weight: 600; color: var(--ink-2); font-size: 12px; vertical-align: bottom; line-height: 1.35; }
+td:first-child, th:first-child { text-align: left; }
+table.tight th, table.tight td { padding: 5px 7px; font-size: 12px; }
+table.textcol td:last-child, table.textcol th:last-child { text-align: left; white-space: normal; min-width: 16em; }
+table.route td:first-child { white-space: nowrap; }
+code, .mono { font-family: var(--mono); font-size: .92em; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--panel); font-size: 12.5px; line-height: 1.4; padding: 6px 9px; border-radius: 6px; max-width: 260px; }
+@media (max-width: 520px) { .fig .v { font-size: 22px; } .card { padding: 16px 14px 14px; } }
+@media (prefers-reduced-motion: reduce) { summary::before { transition: none; } }
+</style>
+
+<div class="page">
+<header>
+  <div class="eyebrow">CS224W · EffortGraph</div>
+  <h1>EffortGraph 基线结果</h1>
+  <p class="lead">三个 GPT-5 模型各开三个推理档位，共 9 个配置，在 800 道题上各答一次。再用这些结果训练、评估一个不用图的 MLP 路由器，作为之后 GNN 路由器的对照。</p>
+  <ul class="facts">
+    <li><b>800</b> 道题 · 15 个题组</li>
+    <li><b>9</b> 个配置</li>
+    <li><b>{{n_calls}}</b> 次调用</li>
+    <li>按标价 <b>${{total_cost}}</b></li>
+    <li>2026-11-07</li>
+  </ul>
+</header>
+
+<div class="cards">
+  <article class="card">
+    <h2>换大模型比开高档更管用</h2>
+    <div class="figs">
+      <div class="fig"><span class="v">{{size_gain}}</span><span class="k">nano 换成 gpt-5（都用 low）</span></div>
+      <div class="fig"><span class="v">{{effort_gain}}</span><span class="k">gpt-5 从 low 开到 high</span></div>
+    </div>
+    <div class="legend"><span><i class="sw m-nano"></i>nano</span><span><i class="sw m-mini"></i>mini</span><span><i class="sw m-gpt5"></i>gpt-5</span></div>
+    <div class="chartwrap">{{chart_effort}}</div>
+    <p class="note">每个模型从 low 开到 high，得分只涨 0.01 到 0.08；模型之间的差距大得多。</p>
+  </article>
+
+  <article class="card">
+    <h2>按题挑配置，上限很高</h2>
+    <div class="figs">
+      <div class="fig"><span class="v">{{oracle_score}}</span><span class="k">理想路由，每题 {{oracle_cost}}</span></div>
+      <div class="fig"><span class="v">{{g5h_score}}</span><span class="k">固定用 gpt-5 high，每题 {{g5h_cost}}</span></div>
+    </div>
+    <div class="legend"><span><i class="sw oracle"></i>理想路由</span><span><i class="sw m-mini"></i>固定配置（浅到深：nano、mini、gpt-5）</span></div>
+    <div class="chartwrap">{{chart_oracle}}</div>
+    <p class="note">理想路由事后看答案，每道题挑能拿最高分的配置里最便宜的一个，是任何路由器的上限。质量优先时，它比 gpt-5 high 高 0.10 分，花费只有后者的 1/{{cost_ratio}}。</p>
+  </article>
+
+  <article class="card">
+    <h2>MLP 路由器不如固定用 mini low</h2>
+    <div class="figs">
+      <div class="fig"><span class="v">{{mlp_score}}</span><span class="k">MLP（质量优先），每题 {{mlp_cost}}</span></div>
+      <div class="fig"><span class="v">{{mini_score}}</span><span class="k">固定用 mini low，每题 {{mini_cost}}</span></div>
+    </div>
+    <div class="legend"><span><i class="sw mlp"></i>MLP 路由</span><span><i class="sw group"></i>按题组选</span><span><i class="sw m-mini"></i>固定配置</span></div>
+    <div class="chartwrap">{{chart_mlp}}</div>
+    <p class="note">MLP 花的钱和 mini low 差不多，得分却低 0.07。省钱优先时，它比 nano low 高 0.03，花费是两倍。按题组选（每个题组固定用训练集上收益最高的配置）在质量优先时得 0.773。</p>
+  </article>
+
+  <article class="card">
+    <h2>MLP 多数时候只选 nano low</h2>
+    <div class="figs">
+      <div class="fig"><span class="v">{{lab_nano}}</span><span class="k">训练标签是 nano low</span></div>
+      <div class="fig"><span class="v">{{mlp_nano}}</span><span class="k">测试时 MLP 选 nano low</span></div>
+    </div>
+    <div class="legend"><span><i class="sw bar labelbar"></i>训练标签</span><span><i class="sw bar mlp"></i>MLP 的选择</span><span>（质量优先）</span></div>
+    <div class="chartwrap">{{chart_picks}}</div>
+    <p class="note">训练标签只把每题收益最高的配置记为正例。质量优先时，它就是答对的配置里最便宜的那个，所以大多是 nano low。MLP 在训练集上几乎记住了全部标签（{{acc}}），测试时基本照这个比例去选：三种设置下有 {{mlp_nano_lo}} 到 {{mlp_nano_hi}} 的题选了 nano low。</p>
+  </article>
+</div>
+
+<section class="detail">
+  <h2>详细内容</h2>
+
+  <details>
+    <summary>模型与调用设置 <small>3 个模型 × 3 个推理档位</small></summary>
+    <div class="body">
+      <div class="tablewrap"><table>
+        <thead><tr><th>模型</th><th>版本</th><th>推理档位</th><th>输入</th><th>缓存输入</th><th>输出</th></tr></thead>
+        <tbody>
+          <tr><td>gpt-5-nano</td><td>2025-08-07</td><td>low / medium / high</td><td>$0.05</td><td>$0.005</td><td>$0.40</td></tr>
+          <tr><td>gpt-5-mini</td><td>2025-08-07</td><td>low / medium / high</td><td>$0.25</td><td>$0.025</td><td>$2.00</td></tr>
+          <tr><td>gpt-5</td><td>2025-08-07</td><td>low / medium / high</td><td>$1.25</td><td>$0.125</td><td>$10.00</td></tr>
+        </tbody>
+      </table></div>
+      <p>价格单位是每百万 token 的美元标价。</p>
+      <ul>
+        <li>9 个配置是 3 个模型和 low、medium、high 三个推理档位的组合。每道题在每个配置下只答一次。</li>
+        <li>通过微软内部的 TRAPI 接口调用（OpenAI Responses API）。输出上限 64,000 token，推理 token 也计在内。</li>
+        <li>零样本作答，提示词按各基准官方评测代码的方式构造。MMLU-Pro 去掉了官方的 5 个示例，SuperGPQA 用官方零样本模板，LiveBench 直接发原题。</li>
+        <li>花费按标价计算，推理 token 按输出价格计。</li>
+        <li>提案原定用 gpt-5.4 系列。它在这个接口上每分钟只有 1 万 token 的额度，其余模型是 100 万，跑不动这个规模，所以换成同一代的三个 GPT-5 模型。</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>数据集与抽样 <small>3 个基准 · 15 个题组 · 800 道题</small></summary>
+    <div class="body">
+      <div class="tablewrap"><table class="textcol">
+        <thead><tr><th>数据集</th><th>每组</th><th>合计</th><th>题组</th></tr></thead>
+        <tbody>
+          <tr><td>MMLU-Pro</td><td>50</td><td>250</td><td>math、physics、health、law、history</td></tr>
+          <tr><td>SuperGPQA</td><td>60</td><td>300</td><td>Physics、Mathematics、Chemistry、Clinical Medicine、Biology</td></tr>
+          <tr><td>LiveBench</td><td>50</td><td>250</td><td>math、reasoning、coding、data analysis、instruction following</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>每个题组先去重，LiveBench 里提示词完全相同的题只留最新发布的一道。然后用固定的随机种子把题目排成分层轮转的顺序，取前 50 道（SuperGPQA 取 60 道）。顺序固定，任意前缀都是分层随机样本，以后要扩充只需接着往后取。</li>
+        <li>分层方式：MMLU-Pro 按题目来源轮流取，SuperGPQA 按 easy、middle、hard 轮流取，LiveBench 先按子任务、再按官方难度轮流取。</li>
+        <li>LiveBench 里已从官方在线题库下架的旧题也保留，250 道里有 127 道，它们都有标准答案。</li>
+        <li>5 折交叉验证按题目在本组顺序里的位置取余 5 来分，每折 160 道，每个题组每折 10 道（SuperGPQA 12 道）。</li>
+      </ul>
+      <h3>各题组的抽取情况</h3>
+      {{strata_table}}
+    </div>
+  </details>
+
+  <details>
+    <summary>评分方式 <small>官方规则</small></summary>
+    <div class="body">
+      <ul>
+        <li>MMLU-Pro 用官方的答案抽取规则。抽不出答案记 0 分；官方代码这时会随机猜一个选项，这里不猜。</li>
+        <li>SuperGPQA 用官方评测代码的选项抽取规则。</li>
+        <li>LiveBench 用它自己的评分代码。代码题实际运行测试用例；指令遵循题用官方检查器；AMPS 数学题在符号比对不能确认时，按官方做法请 gpt-5-mini 判断两个表达式是否等价。</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>固定配置的结果 <small>9 个配置 × 3 个数据集、15 个题组</small></summary>
+    <div class="body">
+      {{fixed_table}}
+      <h3>各题组的平均得分（每格 50 或 60 道题，每行最高的加粗）</h3>
+      {{group_table}}
+    </div>
+  </details>
+
+  <details>
+    <summary>路由实验的设置 <small>收益、标签、MLP 结构、训练与评估</small></summary>
+    <div class="body">
+      <ul>
+        <li><b>收益</b>：r = α·p − β·c（提案式 3），p 是得分，c 是花费。两者都在训练折上做 min-max 归一化。花费先取对数再归一化，因为原始花费跨了四个数量级，最便宜和最贵的回答相差 2.6 万倍。</li>
+        <li><b>三种设置</b>：质量优先 (α, β) = (1, 0)；均衡 (0.5, 0.5)；省钱优先 (0.2, 0.8)。</li>
+        <li><b>标签</b>：每道训练题收益最高的配置记为正例，其余 8 个为负例。收益相同时，取这道题上花费更低的配置。</li>
+        <li><b>输入</b>：题目向量和题组向量都用 all-MiniLM-L6-v2 计算，384 维。题目向量只用题目内容（选择题是题干加选项，LiveBench 是原题），不含作答说明，超过 256 个 token 的部分截掉。题组向量用题组名称，例如“SuperGPQA: Clinical Medicine”。</li>
+        <li><b>MLP 结构</b>：题目向量和题组向量各经过两层（32 维）。模型和推理档位各学一个 32 维向量。四者拼接后再经过两层，给 9 个配置各打一个分，选分最高的那个。</li>
+        <li><b>训练</b>：二元交叉熵，Adam，学习率 0.001，每批 32 道题，1,000 个 epoch，用最后一个模型，不设验证集，与提案一致。</li>
+        <li><b>评估</b>：5 折交叉验证。每折用其余 4 折的 640 道题训练，在本折 160 道题上测试，所以每道题正好测一次。每折跑 5 个随机种子，三种设置共 75 次训练。报告 800 道题汇总的得分和每题花费，± 是种子之间的标准差。和参照的差值用题目层面的配对重抽样（1 万次）给出 95% 区间。</li>
+        <li><b>参照</b>：固定配置；随机，即 9 个配置的期望；按题组选，即每个题组固定用训练折上平均收益最高的配置，不需要训练；理想路由，即每道测试题按实际结果选收益最高的配置，是上限。</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>路由实验的结果 <small>三种设置 × MLP 与参照</small></summary>
+    <div class="body">
+      {{route_table}}
+      <h3>MLP 与参照的得分差（800 道题，括号内为 95% 区间）</h3>
+      {{diff_table}}
+      <h3>各配置被选中的比例（训练标签 / MLP 测试时的选择）</h3>
+      {{pick_table}}
+      <p>路由开销：算题目向量每题约 {{emb_ms}} 毫秒（CPU），MLP 打分每题约 {{router_ms}} 毫秒。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>采集记录 <small>调用、token 与花费</small></summary>
+    <div class="body">
+      <ul>
+        <li>{{n_calls}} 次调用全部完成。输入约 {{tok_in}} 万 token，输出约 {{tok_out}} 万 token，其中推理约 {{tok_reason}} 万。按标价共 ${{total_cost}}。</li>
+        <li>接口网关会切断超过约 4 分钟的单次请求，碰到的基本是 high 档这类推理很长的调用。共有 32 次调用碰到过：27 次重试后在 4 分钟内完成，另外 5 次改为后台提交、轮询取结果。</li>
+        <li>{{trunc}} 个回答用完了 64,000 个输出 token，没有给出答案，记 0 分。</li>
+      </ul>
+    </div>
+  </details>
+</section>
+</div>
+<div id="tip" hidden></div>
+<script>
+(function () {
+  var tip = document.getElementById('tip');
+  function place(x, y) {
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    var left = x + 12, top = y - h - 12;
+    if (left + w > window.innerWidth - 8) left = Math.max(8, x - w - 12);
+    if (top < 8) top = y + 16;
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+  }
+  function target(e) { return e.target && e.target.closest ? e.target.closest('[data-tip]') : null; }
+  document.addEventListener('pointermove', function (e) {
+    var el = target(e);
+    if (!el) { tip.hidden = true; return; }
+    tip.textContent = el.getAttribute('data-tip');
+    tip.hidden = false;
+    place(e.clientX, e.clientY);
+  });
+  document.addEventListener('focusin', function (e) {
+    var el = target(e);
+    if (!el) return;
+    tip.textContent = el.getAttribute('data-tip');
+    tip.hidden = false;
+    var r = el.getBoundingClientRect();
+    place(r.right, r.top);
+  });
+  document.addEventListener('focusout', function () { tip.hidden = true; });
+  document.addEventListener('scroll', function () { tip.hidden = true; }, { passive: true });
+})();
+</script>

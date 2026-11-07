@@ -1,0 +1,466 @@
+{
+  "seed": 224,
+  "folds": 5,
+  "pilot_per_group": 10,
+  "per_group": {
+    "livebench": 50,
+    "supergpqa": 60,
+    "mmlu_pro": 50
+  },
+  "policy": "Deduplicated pools as in data/sampled; one seeded order per group cycling through strata; the set is the first n of each order; fold = rank % 5; pilot = rank < 10.",
+  "groups": {
+    "livebench/math": {
+      "raw_records": 368,
+      "pool_after_dedup": 368,
+      "sampled": 50,
+      "strata_pool": {
+        "AMPS_Hard/unknown": 150,
+        "math_comp/unknown": 146,
+        "olympiad/0.1": 12,
+        "olympiad/0.5": 12,
+        "olympiad/0.8": 12,
+        "olympiad/1.0": 36
+      },
+      "strata_sampled": {
+        "AMPS_Hard/unknown": 17,
+        "math_comp/unknown": 17,
+        "olympiad/0.1": 4,
+        "olympiad/0.5": 4,
+        "olympiad/0.8": 4,
+        "olympiad/1.0": 4
+      },
+      "strata_pilot": {
+        "AMPS_Hard/unknown": 4,
+        "math_comp/unknown": 3,
+        "olympiad/0.1": 1,
+        "olympiad/0.5": 1,
+        "olympiad/0.8": 1
+      },
+      "source_file": "data/raw/livebench/math/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/livebench/math.jsonl",
+      "sha256": "a9cf34e9c44f8e7895651804a25961fa94533ca18de2a9c00f424dc853172389"
+    },
+    "livebench/reasoning": {
+      "raw_records": 200,
+      "pool_after_dedup": 200,
+      "sampled": 50,
+      "strata_pool": {
+        "spatial/unknown": 50,
+        "web_of_lies_v2/unknown": 50,
+        "zebra_puzzle/12": 3,
+        "zebra_puzzle/13": 5,
+        "zebra_puzzle/14": 4,
+        "zebra_puzzle/15": 4,
+        "zebra_puzzle/16": 10,
+        "zebra_puzzle/17": 5,
+        "zebra_puzzle/18": 3,
+        "zebra_puzzle/19": 4,
+        "zebra_puzzle/20": 6,
+        "zebra_puzzle/8": 3,
+        "zebra_puzzle/9": 3,
+        "zebra_puzzle/unknown": 50
+      },
+      "strata_sampled": {
+        "spatial/unknown": 17,
+        "web_of_lies_v2/unknown": 17,
+        "zebra_puzzle/12": 2,
+        "zebra_puzzle/13": 2,
+        "zebra_puzzle/14": 2,
+        "zebra_puzzle/15": 2,
+        "zebra_puzzle/16": 1,
+        "zebra_puzzle/17": 1,
+        "zebra_puzzle/18": 1,
+        "zebra_puzzle/19": 1,
+        "zebra_puzzle/20": 1,
+        "zebra_puzzle/8": 1,
+        "zebra_puzzle/9": 1,
+        "zebra_puzzle/unknown": 1
+      },
+      "strata_pilot": {
+        "spatial/unknown": 4,
+        "web_of_lies_v2/unknown": 3,
+        "zebra_puzzle/12": 1,
+        "zebra_puzzle/13": 1,
+        "zebra_puzzle/14": 1
+      },
+      "source_file": "data/raw/livebench/reasoning/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/livebench/reasoning.jsonl",
+      "sha256": "8a0c41621ea05b9a870fee57c68fdf85bd1fee86288e380b50e1d6123684efac"
+    },
+    "livebench/coding": {
+      "raw_records": 128,
+      "pool_after_dedup": 128,
+      "sampled": 50,
+      "strata_pool": {
+        "LCB_generation/easy": 28,
+        "LCB_generation/hard": 16,
+        "LCB_generation/medium": 34,
+        "coding_completion/easy": 12,
+        "coding_completion/hard": 9,
+        "coding_completion/medium": 29
+      },
+      "strata_sampled": {
+        "LCB_generation/easy": 9,
+        "LCB_generation/hard": 8,
+        "LCB_generation/medium": 8,
+        "coding_completion/easy": 9,
+        "coding_completion/hard": 8,
+        "coding_completion/medium": 8
+      },
+      "strata_pilot": {
+        "LCB_generation/easy": 2,
+        "LCB_generation/hard": 2,
+        "LCB_generation/medium": 1,
+        "coding_completion/easy": 2,
+        "coding_completion/hard": 2,
+        "coding_completion/medium": 1
+      },
+      "source_file": "data/raw/livebench/coding/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/livebench/coding.jsonl",
+      "sha256": "eb6180b2f30a06f1318be6d92cc047ee7a827ef4ef51f0ebe67c18677b516efa"
+    },
+    "livebench/data_analysis": {
+      "raw_records": 150,
+      "pool_after_dedup": 149,
+      "sampled": 50,
+      "strata_pool": {
+        "cta/unknown": 49,
+        "tablejoin/unknown": 50,
+        "tablereformat/unknown": 50
+      },
+      "strata_sampled": {
+        "cta/unknown": 17,
+        "tablejoin/unknown": 17,
+        "tablereformat/unknown": 16
+      },
+      "strata_pilot": {
+        "cta/unknown": 4,
+        "tablejoin/unknown": 3,
+        "tablereformat/unknown": 3
+      },
+      "source_file": "data/raw/livebench/data_analysis/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/livebench/data_analysis.jsonl",
+      "sha256": "3e31cb8d6bfd7d3fc388e20e835706a9eb7ad41aad4de2aab2f7f14a5f69b4ef"
+    },
+    "livebench/instruction_following": {
+      "raw_records": 400,
+      "pool_after_dedup": 400,
+      "sampled": 50,
+      "strata_pool": {
+        "paraphrase/unknown": 100,
+        "simplify/unknown": 100,
+        "story_generation/unknown": 100,
+        "summarize/unknown": 100
+      },
+      "strata_sampled": {
+        "paraphrase/unknown": 13,
+        "simplify/unknown": 13,
+        "story_generation/unknown": 12,
+        "summarize/unknown": 12
+      },
+      "strata_pilot": {
+        "paraphrase/unknown": 3,
+        "simplify/unknown": 3,
+        "story_generation/unknown": 2,
+        "summarize/unknown": 2
+      },
+      "source_file": "data/raw/livebench/instruction_following/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/livebench/instruction_following.jsonl",
+      "sha256": "21af7425ee6eec8e5fbea22a47a82de7e859285f16293ce6221beeac73de758e"
+    },
+    "supergpqa/Physics": {
+      "raw_records": 2845,
+      "pool_after_dedup": 2845,
+      "sampled": 60,
+      "strata_pool": {
+        "easy": 156,
+        "hard": 1482,
+        "middle": 1207
+      },
+      "strata_sampled": {
+        "easy": 20,
+        "hard": 20,
+        "middle": 20
+      },
+      "strata_pilot": {
+        "easy": 4,
+        "hard": 3,
+        "middle": 3
+      },
+      "source_file": "data/raw/supergpqa/SuperGPQA-all.jsonl",
+      "file": "data/sampled_v2/supergpqa/physics.jsonl",
+      "sha256": "228346a9c1e02e42647b50dd320fa4e48464532bdb62f5f9cde9c07e0bd8a91b"
+    },
+    "supergpqa/Mathematics": {
+      "raw_records": 2622,
+      "pool_after_dedup": 2622,
+      "sampled": 60,
+      "strata_pool": {
+        "easy": 256,
+        "hard": 1460,
+        "middle": 906
+      },
+      "strata_sampled": {
+        "easy": 20,
+        "hard": 20,
+        "middle": 20
+      },
+      "strata_pilot": {
+        "easy": 4,
+        "hard": 3,
+        "middle": 3
+      },
+      "source_file": "data/raw/supergpqa/SuperGPQA-all.jsonl",
+      "file": "data/sampled_v2/supergpqa/mathematics.jsonl",
+      "sha256": "3418ba8fcd20de2e09f22a6e0dfd81a461dd908d110120df18bd869f213948b6"
+    },
+    "supergpqa/Chemistry": {
+      "raw_records": 1769,
+      "pool_after_dedup": 1768,
+      "sampled": 60,
+      "strata_pool": {
+        "easy": 133,
+        "hard": 910,
+        "middle": 725
+      },
+      "strata_sampled": {
+        "easy": 20,
+        "hard": 20,
+        "middle": 20
+      },
+      "strata_pilot": {
+        "easy": 4,
+        "hard": 3,
+        "middle": 3
+      },
+      "source_file": "data/raw/supergpqa/SuperGPQA-all.jsonl",
+      "file": "data/sampled_v2/supergpqa/chemistry.jsonl",
+      "sha256": "6dc905b237a9c089615c23a54702ab784d5c31e6f9577d48e458a7a5c7350b89"
+    },
+    "supergpqa/Clinical Medicine": {
+      "raw_records": 1218,
+      "pool_after_dedup": 1218,
+      "sampled": 60,
+      "strata_pool": {
+        "easy": 304,
+        "hard": 172,
+        "middle": 742
+      },
+      "strata_sampled": {
+        "easy": 20,
+        "hard": 20,
+        "middle": 20
+      },
+      "strata_pilot": {
+        "easy": 4,
+        "hard": 3,
+        "middle": 3
+      },
+      "source_file": "data/raw/supergpqa/SuperGPQA-all.jsonl",
+      "file": "data/sampled_v2/supergpqa/clinical_medicine.jsonl",
+      "sha256": "ee01d90f665e981fb8110ccf9f8108e9006b46cd6ffcef77718aa70a561b4dcc"
+    },
+    "supergpqa/Biology": {
+      "raw_records": 1120,
+      "pool_after_dedup": 1120,
+      "sampled": 60,
+      "strata_pool": {
+        "easy": 393,
+        "hard": 92,
+        "middle": 635
+      },
+      "strata_sampled": {
+        "easy": 20,
+        "hard": 20,
+        "middle": 20
+      },
+      "strata_pilot": {
+        "easy": 4,
+        "hard": 3,
+        "middle": 3
+      },
+      "source_file": "data/raw/supergpqa/SuperGPQA-all.jsonl",
+      "file": "data/sampled_v2/supergpqa/biology.jsonl",
+      "sha256": "074a77a1b5b446e3ecea213513f8d82376c9699ece8359a757bdfa5d98044af0"
+    },
+    "mmlu_pro/math": {
+      "raw_records": 1351,
+      "pool_after_dedup": 1349,
+      "sampled": 50,
+      "strata_pool": {
+        "ori_mmlu-abstract_algebra": 83,
+        "ori_mmlu-college_mathematics": 74,
+        "ori_mmlu-elementary_mathematics": 303,
+        "ori_mmlu-high_school_mathematics": 241,
+        "ori_mmlu-high_school_statistics": 143,
+        "scibench-calculus": 40,
+        "scibench-diff": 50,
+        "scibench-stat": 71,
+        "theoremQA-Math": 344
+      },
+      "strata_sampled": {
+        "ori_mmlu-abstract_algebra": 6,
+        "ori_mmlu-college_mathematics": 6,
+        "ori_mmlu-elementary_mathematics": 6,
+        "ori_mmlu-high_school_mathematics": 6,
+        "ori_mmlu-high_school_statistics": 6,
+        "scibench-calculus": 5,
+        "scibench-diff": 5,
+        "scibench-stat": 5,
+        "theoremQA-Math": 5
+      },
+      "strata_pilot": {
+        "ori_mmlu-abstract_algebra": 2,
+        "ori_mmlu-college_mathematics": 1,
+        "ori_mmlu-elementary_mathematics": 1,
+        "ori_mmlu-high_school_mathematics": 1,
+        "ori_mmlu-high_school_statistics": 1,
+        "scibench-calculus": 1,
+        "scibench-diff": 1,
+        "scibench-stat": 1,
+        "theoremQA-Math": 1
+      },
+      "source_file": "data/raw/mmlu_pro/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/mmlu_pro/math.jsonl",
+      "sha256": "e4478a7a17c8f2eb08a4aef0009a66b375bb2cc3c2553c30acbd57e31c6782d8"
+    },
+    "mmlu_pro/physics": {
+      "raw_records": 1299,
+      "pool_after_dedup": 1294,
+      "sampled": 50,
+      "strata_pool": {
+        "ori_mmlu-astronomy": 78,
+        "ori_mmlu-college_physics": 68,
+        "ori_mmlu-conceptual_physics": 134,
+        "ori_mmlu-high_school_physics": 126,
+        "scibench-class": 45,
+        "scibench-fund": 67,
+        "scibench-thermo": 55,
+        "stemez-Mechanics": 33,
+        "stemez-Optics": 193,
+        "stemez-Physics": 391,
+        "theoremQA-Physics": 104
+      },
+      "strata_sampled": {
+        "ori_mmlu-astronomy": 5,
+        "ori_mmlu-college_physics": 5,
+        "ori_mmlu-conceptual_physics": 5,
+        "ori_mmlu-high_school_physics": 5,
+        "scibench-class": 5,
+        "scibench-fund": 5,
+        "scibench-thermo": 4,
+        "stemez-Mechanics": 4,
+        "stemez-Optics": 4,
+        "stemez-Physics": 4,
+        "theoremQA-Physics": 4
+      },
+      "strata_pilot": {
+        "ori_mmlu-astronomy": 1,
+        "ori_mmlu-college_physics": 1,
+        "ori_mmlu-conceptual_physics": 1,
+        "ori_mmlu-high_school_physics": 1,
+        "scibench-class": 1,
+        "scibench-fund": 1,
+        "scibench-thermo": 1,
+        "stemez-Mechanics": 1,
+        "stemez-Optics": 1,
+        "stemez-Physics": 1
+      },
+      "source_file": "data/raw/mmlu_pro/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/mmlu_pro/physics.jsonl",
+      "sha256": "faa264d6d8feae2d4621f83e380ca237e54dfa1986d330bf3eb7c31f6a4c52da"
+    },
+    "mmlu_pro/health": {
+      "raw_records": 818,
+      "pool_after_dedup": 778,
+      "sampled": 50,
+      "strata_pool": {
+        "ori_mmlu-anatomy": 79,
+        "ori_mmlu-clinical_knowledge": 72,
+        "ori_mmlu-college_medicine": 48,
+        "ori_mmlu-human_aging": 86,
+        "ori_mmlu-medical_genetics": 54,
+        "ori_mmlu-nutrition": 159,
+        "ori_mmlu-professional_medicine": 234,
+        "ori_mmlu-virology": 46
+      },
+      "strata_sampled": {
+        "ori_mmlu-anatomy": 7,
+        "ori_mmlu-clinical_knowledge": 7,
+        "ori_mmlu-college_medicine": 6,
+        "ori_mmlu-human_aging": 6,
+        "ori_mmlu-medical_genetics": 6,
+        "ori_mmlu-nutrition": 6,
+        "ori_mmlu-professional_medicine": 6,
+        "ori_mmlu-virology": 6
+      },
+      "strata_pilot": {
+        "ori_mmlu-anatomy": 2,
+        "ori_mmlu-clinical_knowledge": 2,
+        "ori_mmlu-college_medicine": 1,
+        "ori_mmlu-human_aging": 1,
+        "ori_mmlu-medical_genetics": 1,
+        "ori_mmlu-nutrition": 1,
+        "ori_mmlu-professional_medicine": 1,
+        "ori_mmlu-virology": 1
+      },
+      "source_file": "data/raw/mmlu_pro/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/mmlu_pro/health.jsonl",
+      "sha256": "8a40652cfcca77c29c41ff129a2f73da66eb4ccaf76dcc3e61e2a3721fb586fe"
+    },
+    "mmlu_pro/law": {
+      "raw_records": 1101,
+      "pool_after_dedup": 1023,
+      "sampled": 50,
+      "strata_pool": {
+        "ori_mmlu-international_law": 49,
+        "ori_mmlu-jurisprudence": 38,
+        "ori_mmlu-professional_law": 936
+      },
+      "strata_sampled": {
+        "ori_mmlu-international_law": 17,
+        "ori_mmlu-jurisprudence": 17,
+        "ori_mmlu-professional_law": 16
+      },
+      "strata_pilot": {
+        "ori_mmlu-international_law": 4,
+        "ori_mmlu-jurisprudence": 3,
+        "ori_mmlu-professional_law": 3
+      },
+      "source_file": "data/raw/mmlu_pro/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/mmlu_pro/law.jsonl",
+      "sha256": "d49c72d683b120ed3fca914733707cd3fb75ed138e9e82ef74701306abd32900"
+    },
+    "mmlu_pro/history": {
+      "raw_records": 381,
+      "pool_after_dedup": 381,
+      "sampled": 50,
+      "strata_pool": {
+        "ori_mmlu-high_school_european_history": 69,
+        "ori_mmlu-high_school_us_history": 83,
+        "ori_mmlu-high_school_world_history": 84,
+        "ori_mmlu-prehistory": 145
+      },
+      "strata_sampled": {
+        "ori_mmlu-high_school_european_history": 13,
+        "ori_mmlu-high_school_us_history": 13,
+        "ori_mmlu-high_school_world_history": 12,
+        "ori_mmlu-prehistory": 12
+      },
+      "strata_pilot": {
+        "ori_mmlu-high_school_european_history": 3,
+        "ori_mmlu-high_school_us_history": 3,
+        "ori_mmlu-high_school_world_history": 2,
+        "ori_mmlu-prehistory": 2
+      },
+      "source_file": "data/raw/mmlu_pro/jsonl/test-00000-of-00001.jsonl",
+      "file": "data/sampled_v2/mmlu_pro/history.jsonl",
+      "sha256": "f685155c950990f1319e7d65de33485a2472cbfc0c95c6fc8daf445645ca2ed4"
+    }
+  },
+  "combined": {
+    "file": "data/combined_v2_800.jsonl",
+    "records": 800,
+    "sha256": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8"
+  }
+}

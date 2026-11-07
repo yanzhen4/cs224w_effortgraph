@@ -6,6 +6,7 @@ CS224W final project: joint model and reasoning effort selection with graph neur
 - 600 sampled questions per dataset; 1,800 questions across 17 task groups.
 - [Data structure and reproduction](data/README_STRUCTURE.md)
 - [Dataset statistics and sampling decisions](data/README_STATISTICS.md)
+- [GPT-5 baseline report](reports/baseline_report.md): 800-question v2 set (`data/sampled_v2`), 9 configurations (gpt-5-nano / gpt-5-mini / gpt-5 x low / medium / high), responses and scores in `runs/`, MLP router baseline.
 
 ## Download
 

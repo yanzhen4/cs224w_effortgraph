@@ -1,0 +1,134 @@
+[
+  {
+    "started": "2026-11-06T10:49:57+0000",
+    "argv": [
+      "baseline/run.py",
+      "--run",
+      "full"
+    ],
+    "set_sha256": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8",
+    "questions": 800,
+    "models": {
+      "gpt-5-nano": {
+        "deployment": "gpt-5-nano_2025-08-07",
+        "price": [
+          0.05,
+          0.005,
+          0.4
+        ]
+      },
+      "gpt-5-mini": {
+        "deployment": "gpt-5-mini_2025-08-07",
+        "price": [
+          0.25,
+          0.025,
+          2.0
+        ]
+      },
+      "gpt-5": {
+        "deployment": "gpt-5_2025-08-07",
+        "price": [
+          1.25,
+          0.125,
+          10.0
+        ]
+      }
+    },
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "max_output_tokens": 64000,
+    "workers": 6,
+    "tpm": 400000
+  },
+  {
+    "started": "2026-11-06T16:00:50+0000",
+    "argv": [
+      "baseline/run.py",
+      "--run",
+      "full"
+    ],
+    "set_sha256": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8",
+    "questions": 800,
+    "models": {
+      "gpt-5-nano": {
+        "deployment": "gpt-5-nano_2025-08-07",
+        "price": [
+          0.05,
+          0.005,
+          0.4
+        ]
+      },
+      "gpt-5-mini": {
+        "deployment": "gpt-5-mini_2025-08-07",
+        "price": [
+          0.25,
+          0.025,
+          2.0
+        ]
+      },
+      "gpt-5": {
+        "deployment": "gpt-5_2025-08-07",
+        "price": [
+          1.25,
+          0.125,
+          10.0
+        ]
+      }
+    },
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "max_output_tokens": 64000,
+    "workers": 6,
+    "tpm": 400000
+  },
+  {
+    "started": "2026-11-06T18:03:09+0000",
+    "argv": [
+      "baseline/run.py",
+      "--run",
+      "full"
+    ],
+    "set_sha256": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8",
+    "questions": 800,
+    "models": {
+      "gpt-5-nano": {
+        "deployment": "gpt-5-nano_2025-08-07",
+        "price": [
+          0.05,
+          0.005,
+          0.4
+        ]
+      },
+      "gpt-5-mini": {
+        "deployment": "gpt-5-mini_2025-08-07",
+        "price": [
+          0.25,
+          0.025,
+          2.0
+        ]
+      },
+      "gpt-5": {
+        "deployment": "gpt-5_2025-08-07",
+        "price": [
+          1.25,
+          0.125,
+          10.0
+        ]
+      }
+    },
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "max_output_tokens": 64000,
+    "workers": 6,
+    "tpm": 400000
+  }
+]

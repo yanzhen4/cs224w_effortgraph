@@ -5,3 +5,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# TRAPI run state and scoring scratch
+runs/.trapi*
+runs/*/lb_work/
