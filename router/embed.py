@@ -12,7 +12,6 @@ import json
 import time
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from data import DEFAULT_SET, ROOT
 
@@ -34,6 +33,7 @@ def task_text(group):
 
 
 def main():
+    from sentence_transformers import SentenceTransformer
     rows = [json.loads(line) for line in open(DEFAULT_SET)]
     model = SentenceTransformer(MODEL, device='cpu')
     texts = [query_text(r) for r in rows]

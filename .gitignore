@@ -9,3 +9,14 @@ __pycache__/
 # TRAPI run state and scoring scratch
 runs/.trapi*
 runs/*/lb_work/
+
+# Locally retained model weights and machine-specific run state
+runs/**/*.pt
+runs/**/*.log
+runs/**/process.json
+runs/**/status.json
+runs/**/launcher.json
+runs/**/runner.lock
+reports/milestone/*.aux
+reports/milestone/*.log
+reports/milestone/*.out

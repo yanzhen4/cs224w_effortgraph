@@ -1,0 +1,12 @@
+{
+  "checkpoint_predictions_match": true,
+  "test_questions": 160,
+  "train_questions": 320,
+  "encoder_weights_changed": true,
+  "files_sha256": {
+    "router/finetune_full.py": "f5ebc3ef4946e2a533aba1221241181b66c090102b932cdc4c1ac13997e2399f",
+    "data/combined_v2_800.jsonl": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8",
+    "data/sampled_v2_balance/quality/fold_0/manifest.json": "4e39624fa549a5165f01f53b2f999ba04f7d5f513daa03a7efd63c0f20d7b857",
+    "runs/router/full_balance_quality_fold0_seed0/checkpoint.pt": "419747e09419cc7b1a707d646b560e46372874472326fe713c4654f58295e4eb"
+  }
+}

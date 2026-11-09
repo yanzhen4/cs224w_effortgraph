@@ -10,8 +10,11 @@ one training job; the test fold's picks go to runs/router/mlp/picks.jsonl.
     python router/mlp.py            # 3 settings x 5 folds x 5 seeds
 """
 import argparse
+import hashlib
 import json
 import multiprocessing
+import platform
+from pathlib import Path
 import time
 
 import numpy as np
@@ -56,21 +59,44 @@ def features(table):
 
 
 TABLE = XQ = XT = None
+BALANCE = OUTPUT = None
+TRAIN_EPOCHS = EPOCHS
+SETTING_NAMES = {(1.0, 0.0): 'quality', (0.5, 0.5): 'balanced', (0.2, 0.8): 'cost'}
 
 
-def init():
-    global TABLE, XQ, XT
+def init(balance=None, output=None, epochs=EPOCHS):
+    global TABLE, XQ, XT, BALANCE, OUTPUT, TRAIN_EPOCHS
     torch.set_num_threads(1)
     TABLE = data.load()
     XQ, XT = features(TABLE)
+    BALANCE, OUTPUT, TRAIN_EPOCHS = balance, output, epochs
+
+
+def training_split(t, alpha, beta, fold, balance=None):
+    train, test = t.fold != fold, t.fold == fold
+    if balance is None:
+        R = data.Normalizer(t.P[train], t.C[train]).reward(t.P[train], t.C[train], alpha, beta)
+        return train, test, data.best(R, t.C[train])
+    folder = Path(balance) / SETTING_NAMES[(alpha, beta)] / f'fold_{fold}'
+    manifest = json.loads((folder / 'manifest.json').read_text())
+    assert (manifest['alpha'], manifest['beta'], manifest['fold']) == (alpha, beta, fold)
+    ids = [json.loads(line)['sample_id'] for line in (folder / 'train_balance.jsonl').read_text().splitlines()]
+    test_ids = [json.loads(line)['sample_id'] for line in (folder / 'test.jsonl').read_text().splitlines()]
+    assert test_ids == [q for q, use in zip(t.ids, test) if use]
+    assert len(ids) == len(set(ids)) == 320 and set(ids) <= set(t.ids)
+    assert not set(ids).intersection(test_ids)
+    train = np.isin(t.ids, ids)
+    gold = manifest['train_gold_labels']
+    assert set(gold) == set(ids)
+    labels = np.array([gold[q] for q, use in zip(t.ids, train) if use], dtype=np.int64)
+    assert np.bincount(labels, minlength=9).tolist() == manifest['label_counts_after']
+    return train, test, labels
 
 
 def train_job(job):
     (alpha, beta), fold, seed = job
     t = TABLE
-    train, test = t.fold != fold, t.fold == fold
-    R = data.Normalizer(t.P[train], t.C[train]).reward(t.P[train], t.C[train], alpha, beta)
-    labels = data.best(R, t.C[train])
+    train, test, labels = training_split(t, alpha, beta, fold, BALANCE)
     Y = F.one_hot(torch.from_numpy(labels), len(data.CONFIGS)).float()
     xq, xt = XQ[train], XT[train]
     torch.manual_seed(seed)
@@ -78,7 +104,7 @@ def train_job(job):
     opt = torch.optim.Adam(model.parameters(), lr=LR)
     order = torch.Generator().manual_seed(seed)
     started = time.time()
-    for _ in range(EPOCHS):
+    for _ in range(TRAIN_EPOCHS):
         perm = torch.randperm(len(Y), generator=order)
         for i in range(0, len(Y), BATCH):
             idx = perm[i:i + BATCH]
@@ -93,9 +119,15 @@ def train_job(job):
         started = time.time()
         picks = model(XQ[test], XT[test]).argmax(1).numpy()
         infer_ms = (time.time() - started) / test.sum() * 1000
+    if OUTPUT:
+        checkpoint = Path(OUTPUT) / 'checkpoints' / f'{SETTING_NAMES[(alpha, beta)]}_fold{fold}_seed{seed}.pt'
+        torch.save({'state_dict': model.state_dict(), 'd_text': XQ.shape[1], 'hidden': HIDDEN,
+                    'configs': data.CONFIGS, 'alpha': alpha, 'beta': beta, 'fold': fold, 'seed': seed,
+                    'train_ids': [q for q, use in zip(t.ids, train) if use]}, checkpoint)
     return {'alpha': alpha, 'beta': beta, 'fold': fold, 'seed': seed,
+            'train_questions': int(train.sum()), 'test_questions': int(test.sum()),
             'sample_ids': [t.ids[i] for i in np.flatnonzero(test)], 'picks': picks.tolist(),
-            'train_label_accuracy': float((train_picks == labels).mean()), 'final_batch_loss': float(loss),
+            'train_label_accuracy': float((train_picks == labels).mean()), 'final_batch_loss': float(loss.detach()),
             'train_s': round(train_s, 1), 'infer_ms_per_query': infer_ms}
 
 
@@ -103,16 +135,34 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--seeds', type=int, default=5)
     ap.add_argument('--workers', type=int, default=15)
+    ap.add_argument('--balance', action='store_true', help='use sampled_v2_balance fixed splits and gold labels')
+    ap.add_argument('--output', help='output name under runs/router')
+    ap.add_argument('--epochs', type=int, default=EPOCHS)
+    ap.add_argument('--fold', type=int, choices=range(data.FOLDS))
+    ap.add_argument('--setting', choices=SETTING_NAMES.values())
     args = ap.parse_args()
-    out = data.RUNS / 'router/mlp'
+    out = data.RUNS / 'router' / (args.output or ('mlp_balance' if args.balance else 'mlp'))
     out.mkdir(parents=True, exist_ok=True)
+    (out / 'checkpoints').mkdir(exist_ok=True)
+    balance = str(data.ROOT / 'data/sampled_v2_balance') if args.balance else None
     (out / 'config.json').write_text(json.dumps({
-        'router': 'mlp', 'embedding': 'all-MiniLM-L6-v2', 'hidden': HIDDEN, 'epochs': EPOCHS, 'batch': BATCH,
+        'router': 'mlp', 'embedding': 'all-MiniLM-L6-v2', 'hidden': HIDDEN, 'epochs': args.epochs, 'batch': BATCH,
+        'training_data': 'sampled_v2_balance' if args.balance else 'combined_v2_800',
+        'normalization_source': 'original 640-question training fold; balance labels frozen before sampling',
         'lr': LR, 'settings': data.SETTINGS, 'folds': data.FOLDS, 'seeds': args.seeds,
+        'workers': args.workers, 'device': 'cpu', 'threads_per_worker': 1,
+        'versions': {'python': platform.python_version(), 'torch': str(torch.__version__), 'numpy': np.__version__},
+        'input_sha256': {str(p.relative_to(data.ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in
+                         [data.ROOT / 'data/combined_v2_800.jsonl', data.RUNS / 'full/scores.jsonl',
+                          data.ROOT / 'data/embeddings/all-MiniLM-L6-v2.npz']
+                         + ([Path(balance) / 'sampling_manifest.json'] if balance else [])},
         'cost_normalization': 'min-max of log cost on training responses'}, indent=2) + '\n')
     jobs = [(s, f, seed) for s in data.SETTINGS for f in range(data.FOLDS) for seed in range(args.seeds)]
+    jobs = [job for job in jobs if (args.fold is None or job[1] == args.fold)
+            and (args.setting is None or SETTING_NAMES[job[0]] == args.setting)]
     print(f"{len(jobs)} training jobs on {args.workers} workers", flush=True)
-    with multiprocessing.Pool(args.workers, initializer=init) as pool, open(out / 'picks.jsonl', 'w') as f:
+    with multiprocessing.Pool(args.workers, initializer=init,
+                              initargs=(balance, str(out), args.epochs)) as pool, open(out / 'picks.jsonl', 'w') as f:
         for i, r in enumerate(pool.imap_unordered(train_job, jobs), 1):
             f.write(json.dumps(r) + '\n')
             f.flush()

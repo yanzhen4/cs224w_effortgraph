@@ -1,0 +1,46 @@
+{
+  "router": "mlp",
+  "embedding": "all-MiniLM-L6-v2",
+  "hidden": 32,
+  "epochs": 1000,
+  "batch": 32,
+  "training_data": "sampled_v2_balance",
+  "normalization_source": "original 640-question training fold; balance labels frozen before sampling",
+  "lr": 0.001,
+  "settings": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.5
+    ],
+    [
+      0.2,
+      0.8
+    ]
+  ],
+  "folds": 5,
+  "seeds": 5,
+  "cost_normalization": "min-max of log cost on training responses",
+  "workers": 4,
+  "device": "cpu",
+  "threads_per_worker": 1,
+  "versions": {
+    "python": "3.13.7",
+    "torch": "2.15.0",
+    "numpy": "2.5.4"
+  },
+  "input_sha256": {
+    "data/combined_v2_800.jsonl": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8",
+    "runs/full/scores.jsonl": "6d2c9c3d00bc53899df0abf096d95b62af5d6f18e625f8060eaacaf9ac87d4b9",
+    "data/embeddings/all-MiniLM-L6-v2.npz": "dbab573b5c3c4c212cdc6fc3a6d23b5bdd817a10585b6efcdae178db02373538",
+    "data/sampled_v2_balance/sampling_manifest.json": "cfdde29d8c7880894d47fddbc24dcfda56c832ef9264a7baf4675f88b2441745"
+  },
+  "code_sha256": {
+    "router/mlp.py": "c2bb95d36e3e0c8d2b737a5f988b5457e790a5107176bc19774f426ae89c8c57",
+    "router/data.py": "2687f06d67b41a7a90e0e2bf491d9ddb911772317691012a8fb5154ce3f083ae",
+    "router/compare_balance.py": "3f74c4907635649fbab8a5e8ad742cd0f2dbb4981ded4e1c244a5e6b7864735d"
+  }
+}

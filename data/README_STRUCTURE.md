@@ -1,5 +1,7 @@
 # 文件结构
 
+新增实验数据：`sampled_v2_balance/` 保存三个 setting 的 balance 训练划分、原测试划分和抽样代码，见 [Balance 数据说明](sampled_v2_balance/README.md)。
+
 ```text
 data/
 ├── raw/                         # 完整原始数据

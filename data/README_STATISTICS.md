@@ -1,5 +1,7 @@
 # 数据统计与关键决策
 
+Balance 实验版：基于 v2 800 题，每折仅删除 nano low 标签的 320 道训练题，保留 LiveBench / SuperGPQA / MMLU-Pro 各 100 / 120 / 100 题；测试集不变。详细比例与决策见 [Balance 数据说明](sampled_v2_balance/README.md)。下文为原始 1,800 题版本的统计。
+
 ## 总体规模
 
 | 数据集 | 原始记录数 | 抽样题数 | Task groups |

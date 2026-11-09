@@ -1,0 +1,287 @@
+{
+  "seed": 224,
+  "configs": [
+    [
+      "gpt-5-nano",
+      "low"
+    ],
+    [
+      "gpt-5-nano",
+      "medium"
+    ],
+    [
+      "gpt-5-nano",
+      "high"
+    ],
+    [
+      "gpt-5-mini",
+      "low"
+    ],
+    [
+      "gpt-5-mini",
+      "medium"
+    ],
+    [
+      "gpt-5-mini",
+      "high"
+    ],
+    [
+      "gpt-5",
+      "low"
+    ],
+    [
+      "gpt-5",
+      "medium"
+    ],
+    [
+      "gpt-5",
+      "high"
+    ]
+  ],
+  "sources_sha256": {
+    "data/combined_v2_800.jsonl": "d95f4522809781fafdc4d49c500569ea7ee840bcf63fcb7b8c9cff710199edb8",
+    "runs/full/scores.jsonl": "6d2c9c3d00bc53899df0abf096d95b62af5d6f18e625f8060eaacaf9ac87d4b9"
+  },
+  "splits": [
+    {
+      "path": "quality/fold_0",
+      "setting": "quality",
+      "fold": 0,
+      "label_counts_after": [
+        119,
+        41,
+        13,
+        84,
+        21,
+        13,
+        21,
+        5,
+        3
+      ]
+    },
+    {
+      "path": "quality/fold_1",
+      "setting": "quality",
+      "fold": 1,
+      "label_counts_after": [
+        105,
+        44,
+        16,
+        87,
+        20,
+        13,
+        22,
+        8,
+        5
+      ]
+    },
+    {
+      "path": "quality/fold_2",
+      "setting": "quality",
+      "fold": 2,
+      "label_counts_after": [
+        117,
+        42,
+        13,
+        86,
+        18,
+        11,
+        22,
+        7,
+        4
+      ]
+    },
+    {
+      "path": "quality/fold_3",
+      "setting": "quality",
+      "fold": 3,
+      "label_counts_after": [
+        110,
+        45,
+        16,
+        91,
+        18,
+        12,
+        18,
+        7,
+        3
+      ]
+    },
+    {
+      "path": "quality/fold_4",
+      "setting": "quality",
+      "fold": 4,
+      "label_counts_after": [
+        117,
+        40,
+        14,
+        92,
+        19,
+        11,
+        17,
+        5,
+        5
+      ]
+    },
+    {
+      "path": "balanced/fold_0",
+      "setting": "balanced",
+      "fold": 0,
+      "label_counts_after": [
+        119,
+        42,
+        13,
+        85,
+        24,
+        11,
+        20,
+        4,
+        2
+      ]
+    },
+    {
+      "path": "balanced/fold_1",
+      "setting": "balanced",
+      "fold": 1,
+      "label_counts_after": [
+        105,
+        45,
+        16,
+        87,
+        24,
+        12,
+        21,
+        7,
+        3
+      ]
+    },
+    {
+      "path": "balanced/fold_2",
+      "setting": "balanced",
+      "fold": 2,
+      "label_counts_after": [
+        117,
+        42,
+        13,
+        87,
+        19,
+        10,
+        22,
+        7,
+        3
+      ]
+    },
+    {
+      "path": "balanced/fold_3",
+      "setting": "balanced",
+      "fold": 3,
+      "label_counts_after": [
+        110,
+        46,
+        16,
+        92,
+        22,
+        10,
+        17,
+        6,
+        1
+      ]
+    },
+    {
+      "path": "balanced/fold_4",
+      "setting": "balanced",
+      "fold": 4,
+      "label_counts_after": [
+        117,
+        41,
+        14,
+        93,
+        23,
+        9,
+        16,
+        4,
+        3
+      ]
+    },
+    {
+      "path": "cost/fold_0",
+      "setting": "cost",
+      "fold": 0,
+      "label_counts_after": [
+        184,
+        37,
+        9,
+        77,
+        10,
+        1,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "cost/fold_1",
+      "setting": "cost",
+      "fold": 1,
+      "label_counts_after": [
+        174,
+        41,
+        11,
+        81,
+        10,
+        1,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "cost/fold_2",
+      "setting": "cost",
+      "fold": 2,
+      "label_counts_after": [
+        181,
+        39,
+        10,
+        78,
+        9,
+        1,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "cost/fold_3",
+      "setting": "cost",
+      "fold": 3,
+      "label_counts_after": [
+        171,
+        41,
+        12,
+        85,
+        9,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "cost/fold_4",
+      "setting": "cost",
+      "fold": 4,
+      "label_counts_after": [
+        175,
+        38,
+        10,
+        86,
+        10,
+        0,
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}
